@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling</title>
+    <!-- Vidinio (internal) stiliaus priskyrimas -->
+    <style>
+        /* Taškas nurodo atributo class selektorių */
+        .zalia {
+            color:rgba(23, 88, 23, 0.575); 
+            font-weight: normal;
+        }
+
+        /* Žemiau aprašyti selektoriai perrašo aprašytus aukščiau */
+        /* .zalia {
+            color: red;
+        } */
+    </style>
+    <!-- Išorinio (External) stiliaus priskyrimas -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- INLINE STILIAUS PRISKYRIMAS: -->
+    <!-- <h1 style="color:rgba(23, 88, 23, 0.575); font-weight: normal;">Hello World</h1> -->
+    
+    <h1 class="zalia">Hello World</h1>
+    <h2 class="zalia">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ducimus, voluptates optio non consequatur velit excepturi cum sunt laboriosam corrupti.</h2>
+    <h2 class="zalia">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ducimus, voluptates optio non consequatur velit excepturi cum sunt laboriosam corrupti.</h2>
+
+    <p class="raudona">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore omnis nesciunt culpa adipisci voluptas mollitia molestiae voluptates minima quo suscipit, voluptatum deserunt vero, tempora earum perferendis, commodi numquam hic! Accusantium nostrum aperiam similique consequuntur hic mollitia sed veniam enim eligendi pariatur fugiat, nesciunt et adipisci numquam vel, quisquam repudiandae eum?</p>
+</body>
+</html>
