@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+    <style>
+        table {
+            /* Kraštines stiliaus priskyrimas */
+            /* 1px - kraštinės storis */
+            /* solid - kraštinės stilius */
+            /* black - kraštinės spalva */
+
+            /* border: 1px solid black;  */
+
+            border-top: 1px solid black;
+            border-left: 1px solid black;
+
+            /* Norint nustatyti kraštinės storį atskirai  */
+            /* border-width: 10px;
+            /* Norint pakeisti kraštinės stilių */
+            /* border-style: solid;  */
+
+            /* Tarpelių tarp lentelės stulpelių panaikinimas */
+            border-collapse: collapse;
+            
+            /* Elemento pločio nustatymas */
+            width: 500px;
+        }
+
+        /* Elemento selektorius */
+        td {
+            /* Kraštinė iš viršaus */
+            /* border-top: 1px solid black; */
+            /* Kraštinė iš apačios */
+            /* border-bottom: 1px solid black; */
+            /* Kraštinė iš kairės */
+            /* border-left: 1px solid black; */
+            /* Kraštinė iš dešinės */
+            /* border-right: 1px solid black; */
+
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+
+        th {
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+
+            /* Fono spalvos priskyrimas */
+            background-color: rgb(235, 235, 235);
+        }
+
+        /* Kad nereikėtų kartoti tų pačių eilučių prie skirtingų selektorių: */
+
+        /* td, th {
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+        } */
+
+        strong {
+            /* Inline elementams plotis nėra nustatinėjamas */
+            width: 300px;
+        }
+
+        .rowHeight {
+            /* Elemento aukščio nustatymas */
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <!-- tr - table row (eilutės žymėjimas) -->
+        <tr style="height: 80px;">
+            <!-- td - table data (stulpelis eilutėje) -->
+            <!-- colspan atributas nurodo kiek stulpelių šis turėtų užimti -->
+            <td colspan="2">1</td>   
+            <td>3</td>  
+            <td>4</td>  
+            <td>5</td>  
+        </tr>
+        <tr>
+            <td>1</td>  
+            <td>2</td>  
+            <td>3</td>  
+            <td colspan="2">4</td>  
+        </tr>
+        <tr class="rowHeight">
+            <td>1</td>  
+            <td colspan="4">2</td>   
+        </tr>
+        <tr>
+            <!-- rowspan atributas nurodo kiek eilučių šis stulpelis turėtų užimti -->
+            <td rowspan="2">1</td>  
+            <td>2</td>  
+            <td>3</td>  
+            <td>4</td>  
+            <td rowspan="2">5</td>  
+        </tr>
+        <tr> 
+            <td>2</td>  
+            <td>3</td>  
+            <td>4</td>  
+        </tr>
+    </table>
+
+    <p>
+        <strong>Lorem ipsum dolor sit</strong>, amet consectetur adipisicing elit. Eum corporis natus, repellat, repellendus voluptates non beatae doloremque
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <!-- th - table heading -->
+                <th>Krovinio numeris</th>
+                <th>Krovinio pavadinimas</th>
+                <th>Mato vienetas</th>
+                <th>Kaina</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0001</td>
+                <td>Televizoriai</td>
+                <td>1</td>
+                <td>1990Eur</td>
+            </tr>
+            <tr>
+                <td>0002</td>
+                <td>Televizoriai</td>
+                <td>1</td>
+                <td>1990Eur</td>
+            </tr>
+            <tr>
+                <td>0003</td>
+                <td>Televizoriai</td>
+                <td>1</td>
+                <td>1990Eur</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Suma: 6000 EUR</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>
