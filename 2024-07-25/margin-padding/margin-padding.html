@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin Padding</title>
+    <style>
+        body {
+            /* Margin reikšmė priskiriama visomis keturiomis kryptymis nurodant 0px */
+            margin: 0;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+        }
+
+        .margin-custom {
+            /* Margin - Elemento atitraukimas nuo kito bloko */
+            /* Keturios kryptys: top, left, bottom, right */
+            margin-top: 100px;
+            margin-left: 200px;
+            margin-right: 100px;
+            margin-bottom: 100px;
+        }
+
+        .aqua  {
+            background-color: aqua;
+        }
+
+        .purple {
+            background-color: purple;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .margin200 {
+            margin-top: 200px;
+        }
+
+        .margin-50-150 {
+            /* Visomis kryptymis nurodoma reikšmė */
+            /* margin: 150px; */
+            /* Norint nurodyti atitraukimą iš: */
+            /* Viršaus-apačios ir kairės-dešinės */
+            /* *Jeigu viršaus ir apačios arba kairės ir dešinės skaičiai sutampa */
+            /* margin: 50px 150px; */
+            /* Jeigu apačia nesutampa su viršum: */
+            /* margin: 50px 150px 100px; */
+            /* Jeigu norime nurodyti visų krypčių reikšmes */
+            margin: 50px 150px 100px 125px;
+        }
+
+        .padding-150 {
+            /* Atitraukia turinį nuo elemento vidaus */
+            /* Galioja tos pačios taisyklės ir variacijos kaip ir su margin savybe */
+            padding: 150px;
+        }
+
+        .box-sizing {
+            /* Nurodymas įskaičiuoti padding reikšmes į nurodytą fiksuotą plotį ir aukštį */
+            box-sizing: border-box;
+        }
+
+        .overflow {
+            /* Perteklinio turinio paslėpimas */
+            overflow: hidden;
+            /* Slinkties juostos (scrollbar) sukūrimas */
+            overflow: auto;
+        }
+
+        .margin-auto {
+            /* Norint išcentruoti elementą */
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="box aqua margin-custom"></div>
+    <div class="box purple margin200"></div>
+    <div class="box green margin-50-150"></div>
+    <div class="box yellow padding-150 margin200">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex veritatis delectus hic minus? Sapiente eum porro facilis, beatae adipisci suscipit rerum consequuntur voluptas nesciunt animi sunt officia laborum odio expedita, nemo, labore provident? Libero suscipit aliquam provident sint repellat, et itaque impedit accusantium sapiente ratione laborum quos totam, ipsa magnam pariatur rem, modi delectus quo omnis voluptatem. Iste enim iure dicta deleniti impedit est corporis sed expedita alias, harum ratione, id reprehenderit quod? Quibusdam voluptatibus, hic esse accusamus accusantium sit eaque magni libero a saepe provident consectetur explicabo, quas atque. Repudiandae praesentium aut officia neque, ea quis recusandae? Illo, aliquid.
+    </div>
+    <div class="box red padding-150 margin200 box-sizing overflow">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex veritatis delectus hic minus? Sapiente eum porro facilis, beatae adipisci suscipit rerum consequuntur voluptas nesciunt animi sunt officia laborum odio expedita, nemo, labore provident? Libero suscipit aliquam provident sint repellat, et itaque impedit accusantium sapiente ratione laborum quos totam, ipsa magnam pariatur rem, modi delectus quo omnis voluptatem. Iste enim iure dicta deleniti impedit est corporis sed expedita alias, harum ratione, id reprehenderit quod? Quibusdam voluptatibus, hic esse accusamus accusantium sit eaque magni libero a saepe provident consectetur explicabo, quas atque. Repudiandae praesentium aut officia neque, ea quis recusandae? Illo, aliquid.
+    </div>
+    <div class="box purple margin-auto"></div>
+</body>
+</html>
