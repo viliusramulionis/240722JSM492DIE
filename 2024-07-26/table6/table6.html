@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table 6</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        body {
+            background-color: #3c373e;
+            font-family: "Roboto", sans-serif;
+            color: #777;
+            font-weight: 300;
+        }
+
+        table {
+            width: 1110px;
+            margin: 200px auto 0;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left;
+            /* Norint keisti tekstą į didžiąsias raides */
+            /* capitalize - pirma raidė yra iš didžiosios */
+            /* lowercase - iš mažūjų raidžių */
+            /* uppercase - iš didžiūjų raidžių */
+            text-transform: uppercase;
+            /* Šrifto dydžio mažinimas */
+            /* Pagal nutylėjimą šrifto dydis naršyklėje yra 16px */
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: white;
+            padding: 0 10px 30px;
+        }
+
+        td {
+            vertical-align: top;
+            padding: 20px 10px 25px;
+        }
+
+        .darker {
+            background-color: #0000000d;
+        }
+
+        .details a {
+            color: #777;
+            /* Po nuoroda esančio brūkšniuko panaikinimas */
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Order</th>
+                <th>Name</th>
+                <th>Occupation</th>
+                <th>Contact</th>
+                <th>Education</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="darker">
+                <td>1392</td>
+                <td>James Yates</td>
+                <td>Web Designer<br /><small>Far far away, behind the word mountains</small></td>
+                <td>+63 983 0962 971</td>
+                <td>NY University</td>
+                <td class="details"><a href="#">Details</a></td>
+            </tr>
+            <tr>
+                <td>4616</td>
+                <td>Matthew Wasil</td>
+                <td>Graphic Designer<br /><small>Far far away, behind the word mountains</small></td>
+                <td>+02 020 3994 929</td>
+                <td>London College</td>
+                <td class="details"><a href="#">Details</a></td>
+            </tr>
+            <tr class="darker">
+                <td>9841</td>
+                <td>Sampson Murphy</td>
+                <td>Mobile Dev<br /><small>Far far away, behind the word mountains</small></td>
+                <td>+01 352 1125 0192</td>
+                <td>Senior High</td>
+                <td class="details"><a href="#">Details</a></td>
+            </tr>
+            <tr>
+                <td>9548</td>
+                <td>Gaspar Semenov</td>
+                <td>Illustrator<br /><small>Far far away, behind the word mountains</small></td>
+                <td>+92 020 3994 929</td>
+                <td>College</td>
+                <td class="details"><a href="#">Details</a></td>
+            </tr>
+            <tr class="darker">
+                <td>4616</td>
+                <td>Matthew Wasil</td>
+                <td>Graphic Designer<br /><small>Far far away, behind the word mountains</small></td>
+                <td>+02 020 3994 929</td>
+                <td>London College</td>
+                <td class="details"><a href="#">Details</a></td>
+            </tr>
+            <tr>
+                <td>9841</td>
+                <td>Sampson Murphy</td>
+                <td>Mobile Dev<br /><small>Far far away, behind the word mountains</small></td>
+                <td>+01 352 1125 0192</td>
+                <td>Senior High</td>
+                <td class="details"><a href="#">Details</a></td>
+            </tr>
+            <tr class="darker">
+                <td>9548</td>
+                <td>Gaspar Semenov</td>
+                <td>Illustrator<br /><small>Far far away, behind the word mountains</small></td>
+                <td>+92 020 3994 929</td>
+                <td>College</td>
+                <td class="details"><a href="#">Details</a></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

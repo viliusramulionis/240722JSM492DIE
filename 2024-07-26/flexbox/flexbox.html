@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexboxes</title>
+    <style>
+        .row {
+            width: 1000px;
+            margin: 0 auto;
+            background-color: black;
+            display: flex;
+        }
+
+        .h-500 {
+            height: 500px;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+        }
+
+        .small-box {
+            width: 100px;
+            height: 500px;
+        }
+
+        .small-box-h {
+            width: 100px;
+            height: 100px;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+        
+        .green {
+            background-color: green;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .margin-top-50 {
+            margin-top: 50px;
+        }
+
+        .justify {
+            /* Savybė naudojama tik priskyrus display reikšmę flex */
+            /* Lygiavimo nurodymas horizontaliai (x ašyje) */
+            /* start = left */
+            /* justify-content: start; */
+            /* end = right */
+            /* justify-content: end; */
+            /* išrykiavimas per centrą */
+            /* justify-content: center; */
+            /* Tolygūs tarpai tarp visų elementų iš abiejų pusių */
+            /* justify-content: space-around; */
+            /* Tarpai tik tarp pačių elementų, nepaliekant vietos pradžioje ir pabaigoje */
+            /* justify-content: space-between; */
+            /* Išlygiavimas paliekant vienodus tarpus visur */
+            justify-content: space-evenly;
+        }
+        
+        .align {
+            /* Turinio lygiavimas vertikaliai */
+            /* Tokie patys pasirinkimai kaip ir justify-content reikšmės: start, center, end */
+            align-items: center;
+        }
+
+        .wrap {
+            /* Elementų perslinkimui į kitą eilutę */
+            flex-wrap: wrap;
+        }
+
+        /* .gap {
+            gap: 20px;
+        } */
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="box yellow"></div>
+        <div class="box green"></div>
+    </div>
+
+    <div class="row margin-top-50 justify">
+        <div class="small-box yellow"></div>
+        <div class="small-box blue"></div>
+        <div class="small-box green"></div>
+        <div class="small-box red"></div>
+    </div>
+
+    <div class="row h-500 margin-top-50 justify align">
+        <div class="small-box-h yellow"></div>
+        <div class="small-box-h blue"></div>
+        <div class="small-box-h green"></div>
+        <div class="small-box-h red"></div>
+    </div>
+
+    <div class="row wrap gap">
+        <div class="box yellow"></div>
+        <div class="box green"></div>
+        <div class="box red"></div>
+        <div class="box blue"></div>
+    </div>
+</body>
+</html>
