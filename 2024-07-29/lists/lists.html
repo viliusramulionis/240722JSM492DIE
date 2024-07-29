@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists</title>
+    <style>
+        .modified-ul {
+            /* list-style:lower-latin; */
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- ul - unordered list -->
+    <ul>
+        <!-- li - list item -->
+        <li>Opel</li>
+        <li>BMW</li>
+        <li>Mercedes</li>
+        <li>Ford
+            <ul>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem, ipsum dolor.</li>
+                <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- ol - ordered list -->
+    <ol>
+        <li>Opel</li>
+        <li>BMW</li>
+        <li>Mercedes</li>
+        <li>Ford
+            <ul>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem, ipsum dolor.</li>
+                <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <ul class="modified-ul">
+        <!-- li - list item -->
+        <li>Opel</li>
+        <li>BMW</li>
+        <li>Mercedes</li>
+        <li>Ford</li>
+    </ul>
+</body>
+</html>

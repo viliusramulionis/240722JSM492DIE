@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <style>
+        /* Scroll animacijos priskyrimas */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ul {
+            /* reset priskyrimas */
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            /* išrikiavimo priskyrimas */
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        section {
+            height: 800px;
+        }
+    </style>
+</head>
+<body>
+    <!-- nav elementas skirtas navigacijos žymėjimui -->
+    <nav>
+        <ul>
+            <li><a href="#home">Titulinis</a></li>
+            <li><a href="#about-us">Apie Mus</a></li>
+            <li><a href="#history">Istorija</a></li>
+            <li><a href="#contacts">Kontaktai</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <h2>Titulinis</h2>
+    </section>
+    <section id="about-us">
+        <h2>Apie Mus</h2>
+    </section>
+    <section id="history">
+        <h2>Istorija</h2>
+    </section>
+    <section id="contacts">
+        <h2>Kontaktai</h2>
+    </section>
+</body>
+</html>

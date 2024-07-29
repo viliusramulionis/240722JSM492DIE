@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS herarchija</title>
+    <style>
+        .red {
+            color: red;
+        }
+
+        .lentele {
+            border: 1px solid black;
+        }
+
+        .lentele td {
+           color: green; 
+        }
+
+        .orange {
+            color: orange;
+        }
+
+        h1 {
+            color: tomato;
+        }
+
+        .purple {
+            color: purple;
+        }
+
+        .purple.orange {
+            color: green;
+        }
+
+        h1.purple.orange {
+            color: red;
+        }
+
+        /* id selektorius */
+        #heading {
+            color:crimson;
+        }
+
+        /* id selektorius */
+        #new-heading {
+            color:darkgreen;
+        }
+
+        /* id selektorius */
+        #another-heading {
+            color:rgb(102, 149, 102);
+        }
+
+        .very-important-orange {
+            color: orange !important;
+        }
+
+        .very-important-purple {
+            color: purple !important;
+        }
+    </style>
+</head>
+<body>
+    <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, doloremque.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum tempore, quo rem voluptates debitis tenetur tempora consequatur, nostrum incidunt soluta voluptate delectus ducimus accusantium? Odit possimus vitae eos velit enim natus fugiat vero ducimus nesciunt dolores! Rerum quaerat deleniti asperiores iure, reiciendis molestiae aspernatur cumque rem, vel quia similique excepturi?</p>
+    <h2 class="red">Lorem ipsum dolor sit amet.</h2>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+    </table>
+    <table class="lentele">
+        <tr>
+            <td class="orange">1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+    </table>
+    <h1 class="purple">Lorem ipsum dolor sit amet.</h1>
+    <h1 class="purple orange">Lorem ipsum dolor sit amet.</h1>
+    <h1 class="purple" id="heading">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit, dolore.</h1>
+    <h1 class="purple" id="new-heading" style="color: yellow">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit, dolore.</h1>
+    <h1 class="purple very-important-orange very-important-purple" id="another-heading" style="color: rgb(53, 8, 255)">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit, dolore.</h1>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+    <style>
+        /* Visų elementų selektorius */
+        * {
+            box-sizing: border-box;
+        }
+
+        .game {
+            background-color: rgb(187, 173, 160);
+            width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 15px;
+            font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .game div {
+            width: 106.25px;
+            height: 106.25px;
+            background-color: rgba(238, 228, 218, 0.35);
+            font-size: 55px;
+            font-weight: bold;
+            color: rgb(119, 110, 101);
+            /* text-align: center;
+            line-height: 106px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .game .two {
+            background-color: rgb(238, 228, 218);
+        }
+        .game .four {
+            background-color: #ede0c8;
+        }
+        .game .eight {
+            background-color: #f2b17a;
+            color: white;
+        }
+        .game .sixteen {
+            background-color: #f59564;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="game">
+        <div></div>
+        <div></div>
+        <div class="two">2</div>
+        <div class="two">2</div>
+        <div></div>
+        <div></div>
+        <div class="four">4</div>
+        <div class="four">4</div>
+        <div></div>
+        <div></div>
+        <div class="four">4</div>
+        <div class="eight">8</div>
+        <div class="two">2</div>
+        <div class="four">4</div>
+        <div class="eight">8</div>
+        <div class="sixteen">16</div>
+    </div>
+</body>
+</html>
