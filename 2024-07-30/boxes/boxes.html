@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boxes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #192123;
+            font-family: "Montserrat", sans-serif;
+            color:#192123;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .boxes {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .boxes div {
+            width: 200px;
+            height: 200px;
+            background-color: #4b5659;
+            font-size: 55px;
+            font-weight: 700;
+            line-height: 362px;
+            /* line-height: 30px;
+            display: flex;
+            align-items: end; */
+            padding-left: 20px;
+        }
+
+        .boxes div:hover {
+            background-color: #b4e900;
+        }
+
+        .dots {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            padding-top: 20px;
+        }
+
+        .dots div {
+            width: 10px;
+            height: 10px;
+            background-color:#95a5a6;
+        }
+
+        .dots div.active {
+            background-color: #b4e900;
+        }
+    </style>
+</head>
+<body>
+    <div class="boxes">
+        <div class="box">01</div>
+        <div class="box">02</div>
+        <div class="box">03</div>
+    </div>
+    <div class="dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+</body>
+</html>
