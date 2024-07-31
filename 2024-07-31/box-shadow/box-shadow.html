@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Shadow</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+        }
+
+        .purple {
+            background-color: purple;
+        }
+
+        .margin {
+            margin: 200px auto;
+        }
+
+        .shadow {
+            /* Pirmoji reikšmė nurodo horizontalų šešėlio kritimo kampą */
+            /* Antroji reikšmė nurodo vertikalų šešėlio kritimo kampą */
+            /* Trečioji reikšmė blur nurodo fokusą */
+            /* Ketvirtoji reikšmė spread prideda šešėliui "masės" */
+            box-shadow: 15px 15px 90px 22px;
+        }
+
+        .inner-shadow {
+            box-shadow: inset 15px 15px 90px 22px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box purple margin shadow"></div>
+    <div class="box purple margin inner-shadow"></div>
+</body>
+</html>

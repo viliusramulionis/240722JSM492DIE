@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border-radius</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+        }
+
+        .purple {
+            background-color: purple;
+        }
+
+        .margin {
+            margin-top: 50px;
+        }
+
+        .circle {
+            border-radius: 50%;
+        }
+
+        .corner-top-left-radius {
+            border-top-left-radius: 25px;
+        }
+
+        .corner-top-right-radius {
+            border-top-right-radius: 50px;
+        }
+
+        .corner-bottom-left-radius {
+            border-bottom-left-radius: 100px;
+        }
+
+        .corner-bottom-right-radius {
+            border-bottom-right-radius: 200px;
+        }
+
+        .margin {
+            border-radius: 25px 50px 200px 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box purple circle"></div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum magni eaque expedita velit aperiam perspiciatis facilis esse consectetur fugit alias optio, voluptatum nesciunt veritatis quisquam odio debitis accusantium dolore enim.
+
+    <div class="box purple corner-top-left-radius corner-top-right-radius corner-bottom-left-radius corner-bottom-right-radius"></div>
+
+    <div class="box purple radius margin"></div>
+</body>
+</html>

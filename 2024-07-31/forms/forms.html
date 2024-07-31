@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .margin {
+            margin: 15px 0;
+        }
+
+        label {
+            display: block;
+        }
+
+        .inline label {
+            display: inline;
+        }
+
+        input, select, textarea {
+            border: 1px solid rgb(182, 182, 182);
+            background-color: rgb(245, 245, 245);
+            border-radius: 3px;
+            padding: 7px 10px;
+        }
+
+        /* Atributo selektorius */
+        [type="file"] {
+            background-color: aqua;
+        }
+
+        /* Atributo selektorius be reikšmės */
+        [disabled] {
+            background-color: brown;
+            color: white;
+        } 
+
+        input[type="checkbox"] {
+            width: 200px;
+            height: 200px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            /* Laukelio dydžio keitimo iš vartotojo pusės panaikinimui: */
+            resize: none;
+        }
+
+        /* Vedant tekstą laukelyje */
+        input:focus {
+            background-color: crimson;
+            color: white;
+            /* Juodų kraštinių panaikinimas */
+            outline: none;
+        }
+
+        /* Stilizuojamas placeholder atributo tekstas */
+        input::placeholder {
+            color: rgb(181, 50, 50);
+        }
+
+        /* Placeholder elemento stilizavimas vedant tekstą */
+        input:focus::placeholder {
+            color: white;
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+        }
+
+        button {
+            border: none;
+            background-color: brown;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 3px;
+        }
+
+    </style>
+</head>
+<body>
+    <form>
+        <!-- input elementas skirtas vartotojui įvesti informaciją -->
+        <!-- type atributas nurodo input laukelio veikimą -->
+        <!-- placeholder atributas nurodo tekstą kuris atvaizduojamas prieš informacijos įvedimą -->
+        <div class="margin">
+            <label>Vardas:</label>
+            <input type="text" placeholder="Vardenis">
+        </div>
+
+        <!-- required atributas nurodo, kad vartotojas privalo užpildyti laukelį -->
+        <div class="margin">
+            <label>Pavardė:</label>
+            <input type="text" placeholder="Pavardenis" required>
+        </div>
+
+        <!-- type="password" slaptažodžiui skirtas input tipas -->
+        <div class="margin">
+            <label>Slaptažodis:</label>
+            <input type="password" placeholder="Password" required>
+        </div>
+
+        <!-- type="email" skirtas el pašto adresams įvesti -->
+        <div class="margin">
+            <label>El. paštas:</label>
+            <input type="email" placeholder="vardas@gmail.com" required>
+        </div>
+
+        <!-- Reikšmės nurodymas laukelyje -->
+        <div class="margin">
+            <label>Nurodytas vardas</label>
+            <input type="text" value="Edvinas">
+        </div>
+        
+        <!-- Skaičių įvedimui skirtas laukelis -->
+         <!-- min, max nurodo reikšmės apribojimus -->
+        <div class="margin">
+            <label>Produkto kiekis</label>
+            <input type="number" value="1" min="1" max="10">
+        </div>
+
+        <!-- Telefono verifikavimui skirtas laukelis -->
+        <div class="margin">
+            <label>Telefonas</label>
+            <input type="tel" placeholder="+37051651651" required>
+        </div>
+
+        <div class="margin">
+            <label>Data</label>
+            <input type="date">
+        </div>
+
+        <div class="margin">
+            <label>Data su laiku</label>
+            <input type="datetime-local">
+        </div>
+
+        <div class="margin">
+            <label>Laikas</label>
+            <input type="time">
+        </div>
+
+        <div class="margin">
+            <label>Failo įkėlimas</label>
+            <input type="file">
+        </div>
+        
+        <div class="margin inline">
+            <!-- <label><input type="checkbox"> Sutinku su taisyklėmis</label> -->
+            <label for="sutinku">Sutinku su taisyklėmis</label>
+            <input id="sutinku" type="checkbox">
+        </div>
+
+        <div class="margin inline">
+            <!-- type="radio" skirtas pasirinkti vieną iš kelių opcijų -->
+            <label>Pasirinkite jus dominančią temą:</label>
+            <div class="row">
+                <input id="invoices" type="radio" name="topic">
+                <label for="invoices">Sąskaitos</label>
+            </div>
+            <div class="row">
+                <input id="payments" type="radio" name="topic">
+                <label for="payments">Mokėjimai</label>
+            </div>
+            <div class="row">
+                <input id="deals" type="radio" name="topic">
+                <label for="deals">Sutartys</label>
+            </div>
+        </div>
+
+        <div class="margin">
+            <label>Pasirinkite jus dominančią temą:</label>
+            <!-- Select elementas skirtas atlikti tą patį ką ir radio elementas -->
+            <select>
+                <option>Sąskaitos</option> 
+                <option>Mokėjimas</option> 
+                <option>Sutartys</option> 
+            </select>
+        </div>
+
+        <div class="margin">
+            <!-- textarea elementas skirtas įvesti teksto kurio apimtis būtų didesnė nei viena eilutė -->
+            <label>Įveskite savo klausimus arba komentarus:</label>
+            <textarea placeholder="Jūsų tekstas"></textarea>
+        </div>
+
+        <div class="margin">
+            <label>Pasirinkite jus dominančią temą:</label>
+            <!-- Select elementas skirtas atlikti tą patį ką ir radio elementas -->
+            <select disabled>
+                <option>---</option>
+                <option>Sąskaitos</option> 
+                <option>Mokėjimas</option> 
+                <option selected>Sutartys</option> 
+            </select>
+        </div>
+
+        <div class="margin">
+            <label>Jūsų autentifikacijos kodas:</label>
+            <input type="text" readonly value="056156205">
+        </div>
+
+        <div class="margin">
+            <label>Pasirinkite automobilio gamintoją</label>
+            <select>
+                <optgroup label="Vokiški">
+                    <option>BMW</option>
+                    <option>Audi</option>
+                    <option>WW</option>
+                </optgroup>
+                <optgroup label="Amerikietiški">
+                    <option>Ford</option>
+                    <option>Dodge</option>
+                </optgroup>
+                <optgroup label="Japoniški">
+                    <option>Nisan</option>
+                    <option>Toyota</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <fieldset>
+            <label>Pasirinkite automobilio gamintoją</label>
+            <select>
+                <optgroup label="Vokiški">
+                    <option>BMW</option>
+                    <option>Audi</option>
+                    <option>WW</option>
+                </optgroup>
+                <optgroup label="Amerikietiški">
+                    <option>Ford</option>
+                    <option>Dodge</option>
+                </optgroup>
+                <optgroup label="Japoniški">
+                    <option>Nisan</option>
+                    <option>Toyota</option>
+                </optgroup>
+            </select>
+        </fieldset>
+        
+        <button>Siųsti</button>
+    </form>
+</body>
+</html>

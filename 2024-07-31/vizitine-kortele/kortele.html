@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kortele</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #ff9c0a;
+            font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console",
+            "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
+            "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier,
+            monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-size: 16px;
+        }
+
+        .card {
+            background-color: #1c1c1c;
+            padding: 63px 35px;
+            width: 480px;
+            border-radius: 3px; 
+            box-shadow: 0 32px 64px 0 rgba(0, 0, 0, 0.4);
+        }
+
+        .declaration {
+            color: #7e4b86;
+        }
+
+        .variable-name {
+            color: white;
+        }
+
+        .assignment {
+            color: #34767e;
+        }
+
+        .scope-opening {
+            color: white;
+        }
+
+        .property-name {
+            color: #ab4240;
+        }
+
+        .value {
+            color: #779850;
+        }
+
+        .comma {
+            color: white;
+            margin-left: -8px;
+        }
+
+        .scope-closing {
+            color: white;
+        }
+
+        .tab {
+            padding-left: 28px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="row">
+            <span class="declaration">const</span> 
+            <span class="variable-name">aboutMe</span>
+            <span class="assignment">=</span> 
+            <span class="scope-opening">{</span>
+        </div>
+        <div class="tab">
+            <div class="row">
+                <span class="property-name">name</span>
+                <span class="assignment">:</span>
+                <span class="value">'laura pinto'</span>
+                <span class="comma">,</span>
+            </div>
+            <div class="row">
+                <span class="property-name">email</span>
+                <span class="assignment">:</span>
+                <span class="value">'laurapinto@gmail.com'</span>
+                <span class="comma">,</span>
+            </div>
+            <div class="row">
+                <span class="property-name">position</span>
+                <span class="assignment">:</span>
+                <span class="value">'front-end developer'</span>
+                <span class="comma">,</span>
+            </div>
+            <div class="row">
+                <span class="property-name">website</span>
+                <span class="assignment">:</span>
+                <span class="value">'laurapinto.github.io'</span>
+            </div>
+        </div>
+        <div class="row">
+            <span class="scope-closing">};</span>
+        </div>
+    </div>
+</body>
+</html>
