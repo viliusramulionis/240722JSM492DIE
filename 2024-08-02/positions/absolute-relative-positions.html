@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+        }
+
+        .big-box {
+            width: 800px;
+            height: 800px;
+        }
+
+        .purple {
+            background-color: purple;
+        }
+        .yellow {
+            background-color: yellow;
+        }
+        .red {
+            background-color: red;
+        }
+        .blue {
+            background-color: blue;
+        }
+
+        .margin {
+            margin-top: 100px;
+            margin-left: 100px;
+        }
+
+        .relative {
+            /* Elementui kuri norime paversti relityviu priskiriame position: relative; */
+            position: relative;
+        }
+
+        .absolute {
+            /* Body elementas yra priskirtas relityvus elementas pagal nutylejima */
+            /* position: static; Savybės reikšmė pirskirta prie visų elementų pagal nutylėjimą */
+            position: absolute;
+            /* top: 0; 
+            left: 0;
+            right: 0;
+            bottom: 0; */
+
+            /* Pagal nutylėjimą priskiriamos reikšmės top: 0; ir left: 0; */
+            top: 330px;
+            left: 100px;
+        }
+
+        .z-index-3 {
+            z-index: 3;
+        }
+
+        .z-index-2 {
+            z-index: 2;
+        }
+
+        .z-index-1 {
+            z-index: 1;
+        }
+
+        .left-20 {
+            left: 120px;
+        }
+
+        .left-40 {
+            left: 140px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Absoliutūs ir relityvūs elementai</h1>
+    <div class="big-box yellow margin relative">
+        <div class="box purple absolute z-index-3"></div>
+        <div class="box red absolute z-index-2 left-20"></div>
+        <div class="box blue absolute z-index-1 left-40"></div>
+    </div>
+    
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ipsum iste voluptatibus necessitatibus officiis distinctio consectetur qui laborum atque quibusdam. Quaerat totam voluptatibus laborum eos possimus cum saepe, nam corrupti eum suscipit inventore vitae blanditiis illum neque ducimus facere sit placeat voluptatum! Sed deleniti velit nisi. Cumque recusandae cupiditate, accusantium officiis aspernatur in nemo, hic unde, eius voluptates repellendus adipisci ab quia quaerat. Facilis repellendus ratione omnis earum. Corporis ipsum rem ut incidunt, quia dolorem consequuntur maiores tempora delectus a omnis eius nulla qui asperiores, iure at quidem possimus quo nihil suscipit laboriosam odit reiciendis! At quidem consectetur iure natus.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ipsum iste voluptatibus necessitatibus officiis distinctio consectetur qui laborum atque quibusdam. Quaerat totam voluptatibus laborum eos possimus cum saepe, nam corrupti eum suscipit inventore vitae blanditiis illum neque ducimus facere sit placeat voluptatum! Sed deleniti velit nisi. Cumque recusandae cupiditate, accusantium officiis aspernatur in nemo, hic unde, eius voluptates repellendus adipisci ab quia quaerat. Facilis repellendus ratione omnis earum. Corporis ipsum rem ut incidunt, quia dolorem consequuntur maiores tempora delectus a omnis eius nulla qui asperiores, iure at quidem possimus quo nihil suscipit laboriosam odit reiciendis! At quidem consectetur iure natus.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ipsum iste voluptatibus necessitatibus officiis distinctio consectetur qui laborum atque quibusdam. Quaerat totam voluptatibus laborum eos possimus cum saepe, nam corrupti eum suscipit inventore vitae blanditiis illum neque ducimus facere sit placeat voluptatum! Sed deleniti velit nisi. Cumque recusandae cupiditate, accusantium officiis aspernatur in nemo, hic unde, eius voluptates repellendus adipisci ab quia quaerat. Facilis repellendus ratione omnis earum. Corporis ipsum rem ut incidunt, quia dolorem consequuntur maiores tempora delectus a omnis eius nulla qui asperiores, iure at quidem possimus quo nihil suscipit laboriosam odit reiciendis! At quidem consectetur iure natus.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ipsum iste voluptatibus necessitatibus officiis distinctio consectetur qui laborum atque quibusdam. Quaerat totam voluptatibus laborum eos possimus cum saepe, nam corrupti eum suscipit inventore vitae blanditiis illum neque ducimus facere sit placeat voluptatum! Sed deleniti velit nisi. Cumque recusandae cupiditate, accusantium officiis aspernatur in nemo, hic unde, eius voluptates repellendus adipisci ab quia quaerat. Facilis repellendus ratione omnis earum. Corporis ipsum rem ut incidunt, quia dolorem consequuntur maiores tempora delectus a omnis eius nulla qui asperiores, iure at quidem possimus quo nihil suscipit laboriosam odit reiciendis! At quidem consectetur iure natus.
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuotraukos</title>
+    <style>
+        .jpg {
+            background-color: aqua;
+        }
+
+        .png {
+            background: rgb(108, 66, 66);
+        }
+
+        .webp {
+            background-color: blueviolet;
+        }
+
+        .svg {
+            background: chocolate url(svg-square-example.svg) no-repeat center center;
+            height: 800px
+        }
+
+        .svg:hover {
+            background-image: url(svg-square-example-hover.svg);
+        }
+
+        .integrated-svg {
+            background-color: crimson;
+        }
+
+        .integrated-svg svg {
+            fill: purple;
+        }
+
+        .integrated-svg:hover svg {
+            fill: rgb(149, 255, 0);
+        }
+
+    </style>
+</head>
+<body>
+    <h3>JPEG NUOTRAUKA</h3>
+    <img src="jpeg.jpg" alt="" width="500">
+    <h3>PNG NUOTRAUKOS</h3>
+    <div class="png">
+        <img src="transparency-example-bg-filled.png" alt="" width="500">
+        <img src="transparency-example.png" alt="" width="500">
+    </div>
+    <h3>JPG, JPEG NUOTRAUKOS NETURI PERMATOMUMO (TRANSPARENCY)</h3>
+    <div class="jpg">
+        <img src="transparency_example_jpg.jpg" alt="" width="500">
+    </div>
+    <h3>Webp - Nuotraukos formatas</h3>
+    <div class="webp">
+        <img src="example-webp.webp" alt="" width="500">
+    </div>
+    <h3>Konvertuota JPG nuotrauka į WEBP Formatą</h3>
+    <div class="webp">
+        <img src="jpeg.webp" alt="" width="500">
+    </div>
+    <h3>SVG (Vektoriaus) - Pavyzdys</h3>
+    <div class="svg"></div>
+    <h3>SVG Integravimas</h3>
+    <div class="integrated-svg">
+        <!-- Norint pakeisti svg elemento užpildymo spalvą, naudojamas fill atributas arba fill css savybė -->
+        <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" fill="white" width="1080" height="1080">
+            <path id="Shape 1" class="s0" d="m807 283v514h-535v-514z"/>
+        </svg>
+    </div>
+
+    <h3>SVG Ikonos Integravimas</h3>
+    <div class="svg-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" fill="currentColor" class="bi bi-0-square-fill" viewBox="0 0 16 16">
+            <path d="M8 4.951c-1.008 0-1.629 1.09-1.629 2.895v.31c0 1.81.627 2.895 1.629 2.895s1.623-1.09 1.623-2.895v-.31c0-1.8-.621-2.895-1.623-2.895"/>
+            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm5.988 12.158c-1.851 0-2.941-1.57-2.941-3.99V7.84c0-2.408 1.101-3.996 2.965-3.996 1.857 0 2.935 1.57 2.935 3.996v.328c0 2.408-1.101 3.99-2.959 3.99"/>
+        </svg>
+    </div>
+</body>
+</html>
