@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Open Sans", sans-serif;
+            background-color: #e2f1fc;
+        }
+
+        .payment {
+            width: 900px;
+            background-color: white;
+            margin: 100px auto;
+            padding: 40px;
+        }
+
+        label {
+            font-weight: 700;
+            display: block;
+        }
+
+        .field-description {
+            color:#b6b8cc;
+            font-size: 14px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 0 30px;
+        }
+
+        .column {
+            width: 50%;
+        }
+
+        a {
+            color: #4879fe;
+            text-decoration: none;
+        }
+
+        .iban {
+            position: relative;
+        }
+
+        .iban img {
+            position: absolute;
+            left: 15px;
+        }
+        
+        .iban input {
+            background-color: #f9f9f9;
+            border: 1px solid #efefef;
+            width: 100%;
+            height: 45px;
+            padding-left: 45px;
+        }
+
+        .input {
+            background-color: white;
+            border: 1px solid #f0f0f0;
+            height: 40px;
+            text-align: center;
+            width: 100%;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .input::placeholder {
+            color: #dcdcde;
+        }
+
+        .divider {
+            padding: 0 10px;
+        }
+
+        .icon-holder {
+            position: relative;
+        }
+
+        .icon-holder i {
+            position: absolute;
+            right: 10px;
+            /* calc() funkcija leidžia atlikti aritmetinius veiksmus su skirtingais matavimo vienetais */
+            /* top: calc(50% - 11px); */
+            
+            /* Absolučių elementų centravimas: */
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+
+        .list-fields {
+            display: flex;
+            align-items: center;
+        }
+
+        .align-right {
+            text-align: right;
+        }
+
+        .button-holder {
+            padding-top: 40px;
+        }
+
+        .button-holder button {
+            background-color: #2962fe;
+            color: white;
+            width: 100%;
+            padding: 15px 0;
+            font-weight: 600;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment">
+        <form>
+            <div class="row">
+                <div class="column">
+                    <label>Card Number</label>
+                    <span class="field-description">Enter 16 digit card number on the card.</span>
+                </div>
+                <div class="column align-right">
+                    <a href="#">
+                        <i class="bi bi-pencil"></i>
+                        <span>Edit</span>
+                    </a>
+                </div>
+            </div>
+            <div class="row iban">
+                <img src="images/11ku.svg">
+                <input type="text" placeholder="LT6516516515616551">
+            </div>
+            <div class="row">
+                <div class="column">
+                    <label>Expiry date</label>
+                    <span class="field-description">Enter the expiration date of the card.</span>
+                </div>
+                <div class="column list-fields">
+                    <input type="number" placeholder="MM" class="input">
+                    <span class="divider">/</span>
+                    <input type="number" placeholder="YY" class="input">
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <label>CVC Number</label>
+                    <span class="field-description">Enter card verification number from the back of the card.</span>
+                </div>
+                <div class="column icon-holder">
+                    <i class="bi bi-eye"></i>
+                    <input type="text" class="input">
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <label>Cardholder Name</label>
+                    <span class="field-description">Enter cardholders name.</span>
+                </div>
+                <div class="column icon-holder">
+                    <i class="bi bi-person"></i>
+                    <input type="text" class="input" placeholder="Cardholder Name">
+                </div>
+            </div>
+            <div class="button-holder">
+                <button>Pay Now</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

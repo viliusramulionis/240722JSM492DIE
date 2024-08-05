@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+        }
+
+        .purple {
+            background-color: purple;
+            /* Pirmu parametru nurodome savybę, antru animacijos trukmę, trečiu animacijos tipą
+             */
+             /* .2s = 200 milisekundžių (200ms) */
+
+            transition: background-color 200ms ease-in-out;
+            /* transition: background-color .2s ease-in-out; */
+        }
+
+        .purple:hover {
+            background-color: orange;
+        }
+
+        .blue {
+            background-color: blue;
+            transition: background-color 500ms ease-in-out,
+                        transform 1s ease;
+        }
+
+        .blue:hover {
+            background-color: brown;
+            transform: scale(1.5) rotate(12deg) skew(6deg);
+        }
+
+        .red {
+            background-color: red;
+            color: black;
+            font-size: 30px;
+            /* transition: background-color 500ms ease-in-out,
+                        color 500ms ease-in-out,
+                        font-size 500ms ease-in-out; */
+            /* Jeigu visų savybių animacijos ilgiai ir tipai sutampa: */
+            transition: all 500ms ease-in-out;
+
+            /* Teksto lygiavimui: */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .red:hover {
+            background-color: green;
+            color: white;
+            font-size: 50px;
+        }
+
+        .crimson {
+            background-color:crimson;
+            color: white;
+            font-size: 38px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box purple"></div>
+    <div class="box blue"></div>
+    <div class="box red">Lorem ipsum</div>
+</body>
+</html>
