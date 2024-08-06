@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        /* Šrifto registracija */
+        @font-face {
+            font-family: 'Gilroy';
+            src: url(fonts/Gilroy-Regular.ttf);
+            font-weight: 300;
+        }
+        
+        @font-face {
+            font-family: 'Gilroy';
+            src: url(fonts/Gilroy-Medium.ttf);
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: 'Gilroy';
+            src: url(fonts/Gilroy-Bold.ttf);
+            font-weight: 600;
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Gilroy';
+            font-weight: 300;
+        }
+
+        main {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .left {
+            background: url(images/bg.png) no-repeat center center / cover;
+            min-height: 500px;
+        }
+
+        .logo {
+            position: absolute;
+            top: 30px;
+            left: 23px;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            height: 100%;
+            align-items: center;
+        }
+
+        .links ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            max-width: 384px;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .links a {
+            background-color: white;
+            color: #707070;
+            text-decoration: none;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            font-weight: 400;
+            font-size: 15px;
+        }
+
+        .links a span {
+            width: 250px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            height: 34px;
+        }
+
+        .links li a span::before {
+            content: ""; 
+            width: 30px;
+            height: 30px;
+            display: block;
+        }
+
+        .links li:nth-child(1) a span::before {
+            background: url(images/linkedin.svg) no-repeat center center;
+        }
+
+        .links li:nth-child(2) a span::before {
+            background: url(images/twitter.svg) no-repeat center center;
+        }
+
+        .links li:nth-child(3) a span::before {
+            background: url(images/fb.svg) no-repeat center center;
+        }
+
+        .right {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 800px;
+        }
+
+        .right::before,
+        .right::after {
+            content: ""; 
+            width: 142px;
+            height: 147px;
+            position: absolute;
+            background: url(images/deco1.svg) no-repeat center center;
+        }
+
+        .right::before {
+            top: 0;
+            right: 0;
+        }
+
+        
+        .right::after {
+            bottom: -20px;
+            left: 0;
+        }
+
+        .sign-up {
+            max-width: 385px;
+            padding: 0 20px;
+        }
+
+        .sign-up h2 {
+            margin: 0;
+            text-align: center;
+            font-size: 45px;
+            color: #4F4F4F;
+            letter-spacing: 7px;
+        }
+
+        .sign-up h4 {
+            color: rgba(79, 79, 79, 0.8);
+            font-weight: 400;
+            font-size: 25px;
+            margin: 15px 0 40px;
+            text-align: center;
+        }
+
+        .input {
+            margin-bottom: 30px;
+        }
+
+        .input label {
+            display: block;
+            font-size: 14px;
+            color: #4F4F4F;
+        }
+
+        .input input[type="email"],
+        .input input[type="password"] {
+            border: 1px solid #CACACA;
+            width: 100%;
+            box-shadow: 2px 4px 6px 0 rgb(79, 79, 79, 0.15);
+            height: 30px;
+        }
+
+        .agreement {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .agreement label {
+            font-size: 12px;
+        }
+
+        .button button {
+            background-color: #03A9F4;
+            color: white;
+            font-size: 15px;
+            border: none;
+            width: 100%;
+            height: 34px;
+            border-radius: 15px;
+            box-shadow: 2px 4px 6px 0 rgb(79, 79, 79, 0.15);
+        }
+
+
+        @media screen and (min-width: 768px) {
+            main {
+                flex-direction: row;
+            }
+
+            .left,
+            .right {
+                width: 50%;
+            }
+
+            .right {
+                /* min-height: auto; */
+                min-height: unset;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="left"> 
+            <div class="logo">
+                <img src="images/logo.png" alt="">
+            </div>
+            <div class="links">
+                <ul>
+                    <li>
+                        <a href="#"><span>Sign up with Linkedln</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span>Sign up with Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span>Sign up with Facebook</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <div class="sign-up">
+                <h2>Sign Up</h2>
+                <h4>Get started absolutely free</h4>
+                <form>
+                    <div class="input">
+                        <label>Email</label>
+                        <input type="email">
+                    </div>
+                    <div class="input">
+                        <label>Password</label>
+                        <input type="password">
+                    </div>
+                    <div class="input agreement">
+                        <input id="agree" type="checkbox">
+                        <label for="agree">
+                            Creating an account means you’re okay with our Terms of Service, Privacy Policy, and default Notification Settings
+                        </label>
+                    </div>
+                    <div class="button">
+                        <button>Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

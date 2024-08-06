@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed height responsive elements</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            text-align: justify;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .row {
+            display: flex;
+            gap: 30px;
+        }
+
+        .column {
+            width: 33.33333%;
+        }
+
+        .purple {
+            background-color: purple;
+        }
+        .orange {
+            background-color: orange;
+        }
+        .aqua {
+            background-color: aqua;
+        }
+
+        @media screen and (max-width: 964px) {
+            .row {
+                flex-direction: column;
+            }
+
+            .column {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="column purple">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, velit sapiente vero voluptatem illum temporibus facilis consectetur praesentium numquam, cupiditate qui sunt. Pariatur dolorem iusto, distinctio, accusamus quasi rem minus deserunt dolores nisi itaque velit eaque. Accusamus provident ullam, ducimus nisi veniam nam commodi, voluptatum voluptates doloremque atque laboriosam hic placeat minus voluptas iste enim aspernatur. Similique temporibus esse quae soluta, est fugit dignissimos, illum laborum neque officia quia! Quasi alias molestias esse facilis eligendi! Dolorum, saepe quisquam! Incidunt consectetur doloremque maxime voluptates, aut molestias? Saepe eum perspiciatis, sit quisquam iure itaque modi, impedit veniam praesentium ab deleniti. Officia nostrum iure dolorum neque nobis sapiente omnis alias, provident molestias rem quis cum natus cumque accusantium sit consectetur laudantium odit perferendis fugiat. Soluta placeat beatae dolorum saepe aliquid nulla explicabo, tempore veniam, illum illo nemo non eos dolor expedita quaerat alias. Voluptatibus eos sequi iste soluta officia dolorem delectus in quaerat!</div>
+            <div class="column orange">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, velit sapiente vero v</div>
+            <div class="column aqua">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, velit sapiente vero voluptatem illum temporibus facilis consectetur praesentium numquam, cupiditate qui sunt. Pariatur dolorem iusto, distinctio, accusamus quasi rem minus deserunt dolores nisi itaque velit eaque. Accusamus provident ullam, ducimus nisi veniam nam commodi, voluptatum voluptates doloremque atque laboriosam hic placeat minus voluptas iste enim aspernatur. Similique temporibus esse quae soluta, est fugit dignissimos, illum laborum neque officia quia! Quasi alias molestias esse facilis eligendi! Dolorum, saepe quisquam! Incidunt consectetur doloremque maxime voluptates, aut molestias? Saepe eum perspiciatis, sit quisquam iure itaque modi, impedit veniam praesentium ab deleniti. Officia nostrum iure dolorum neque nobis sapiente omnis alias, provident molestias rem quis cum natus cumque accusan</div>
+        </div>
+    </div>
+</body>
+</html>
