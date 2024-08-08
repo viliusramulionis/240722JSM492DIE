@@ -1,0 +1,255 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    /* Absoliutus kelias iki direktorijos (Absolute path) */
+    /* C:\Users\viliu\Documents\GitHub\VCS\240722JSM492DIE\2024-08-08\contact-form\assets\images */
+    /* Relative path */
+    /* Du taškai (..) nurodo vieną direktoriją aukščiau */
+    background: url(../images/bg.png) no-repeat center center / cover;
+    font-family: Inter;
+    color: #8E8E8E;
+}
+
+.contact {
+    background-color: white;
+    max-width: 1440px;
+    padding: 35px 8px 0 14px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.right img {
+    max-width: 100%;
+}
+
+h2 {
+    font-family: Montserrat;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    color: black;
+}
+
+h2 span {
+    color: #6DE1C2;
+}
+
+p {
+    font-family: Montserrat;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0;
+    color: black;
+}
+
+p.mobile,
+p.desktop {
+    display: none;
+}
+
+p.desktop {
+    font-size: 14px;
+}
+
+form {
+    padding-top: 20px;
+}
+
+.input-row input {
+    border: none;
+    height: 50px;
+    border-bottom: 1px solid #737B7D;
+    padding-left: 16px;
+    font-size: 16px;
+    font-family: Inter;
+    width: 100%;
+}
+
+.align-inputs {
+    display: flex;
+    gap: 24px;
+}
+
+.align-inputs .input-row:first-child {
+    width: 60%;
+}
+.align-inputs .input-row:last-child {
+    width: 40%;
+}
+
+.file-upload {
+    margin-top: 18px;
+    height: 104px;
+    border: 1px dashed #8E8E8E;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: .5px;
+    gap: 24px;
+}
+
+.requirements {
+    letter-spacing: .5px;
+    font-size: 10px;
+    padding: 5px 0 25px;
+}
+
+.agreement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    gap: 10px;
+    color: #383C3E;
+    padding-bottom: 10px;
+}
+
+.submit button {
+    background-color: #0982FE;
+    font-size: 14px;
+    text-transform: uppercase;
+    height: 54px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    min-width: 294px;
+}
+
+.contact-details ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-details strong {
+    display: block;
+    color: black;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+}
+
+.contact-details a {
+    text-decoration: none;
+    color: #DD5471;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+.contact-details li {
+    padding-left: 43px;
+}
+
+.contact-details li:nth-child(1) {
+    background: url(../images/icon1.svg) no-repeat center left;
+}
+.contact-details li:nth-child(2) {
+    background: url(../images/icon2.svg) no-repeat center left;
+}
+.contact-details li:nth-child(3) {
+    background: url(../images/icon2.svg) no-repeat center left;
+}
+
+/* Mobilios versijos query */
+@media screen and (max-width: 768px) {
+    .contact {
+        border-right: 6px solid #6DE1C2;
+    }    
+
+    p.mobile {
+        display: block;
+        text-align: center;
+    }
+
+    h2 {
+        margin: 0 0 0;
+        text-align: center;
+    }
+
+    .submit {
+        text-align: center;
+    }
+
+    .contact-details {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .contact-details ul {
+        width: 294px;
+    }
+}
+
+/* Desktop versijos query */
+@media screen and (min-width: 768px) {
+    .contact::before {
+        content: "";
+        width: 419px;
+        height: 100%;
+        background-color: #6DE1C2;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    
+    .contact {
+        margin: 50px auto;
+        padding: 50px 95px;
+        border-radius: 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .content {
+        justify-content: space-between;
+        flex-direction: row;
+        gap: 65px;
+        position: relative;
+    }
+
+    .left {
+        width: calc(48% - 65px);
+    }
+
+    .right {
+        width: 52%;
+        max-width: 638px;
+    }
+
+    p.desktop {
+        display: block;
+    }
+
+    .requirements { 
+        font-size: 13px;
+    }
+
+    .agreement {
+        justify-content: start;
+        font-size: 14px;
+        padding-bottom: 20px;
+    }
+
+    .submit button {
+        width: 100%;
+    }
+
+    .contact-details ul {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 20px;
+    }
+}

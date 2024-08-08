@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rem - Em</title>
+    <style>
+        html {
+            /* Šrifto dydis priskirtas naršyklės pagal nutylėjimą yra 16px */
+            font-size: 18px;
+        }
+        .box {
+            /* 1rem = 16px (font-size reikšmė prie html elemento) */
+            width: 10rem;
+            height: 10rem;
+        }
+
+        .box-small {
+            width: 5rem;
+            height: 5rem;
+        }
+
+        .box-large {
+            width: 15rem;
+            height: 15rem;
+        }
+        
+        .purple {
+            background-color: purple;
+        }
+        .orange {
+            background-color: orange;
+        }
+        .blue {
+            background-color: blue;
+        }
+        
+        .rem {
+            font-size: 30px;
+        }
+
+        .em {
+            font-size: 20px;
+        }
+
+        .em-box {
+            width: 10em;
+            height: 10em;
+        }
+    </style>
+</head>
+<body>
+    <div class="rem">
+        <div class="box purple"></div>
+        <div class="box-small orange"></div>
+        <div class="box-large blue"></div>
+    </div>
+
+    <div class="em">
+        <div class="em-box purple"></div>
+    </div>
+</body>
+</html>
