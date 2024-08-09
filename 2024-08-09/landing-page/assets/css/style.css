@@ -1,0 +1,234 @@
+:root {
+    --primary-color: black;
+    --offcanvas-nav-width: 430px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Spectral;
+    font-weight: 300;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1336px;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+header .inner-header {
+    height: 88px;
+}
+
+header nav.main ul {
+    display: flex;
+}
+
+header nav.main ul a {
+    font-family: Poppins;
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: .4rem 1.5rem;
+    display: block;
+    position: relative;
+    font-weight: 400;
+}
+
+header nav.main ul a.active {
+    border: 1px solid var(--primary-color);
+}
+
+header nav.main ul a:hover {
+    color: white;
+    transition: color .2s ease-in-out;
+}
+
+header nav.main ul a::before {
+    content: "";
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 0;
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    transition: height .2s ease-in-out;
+    z-index: -1;
+}
+
+header nav.main ul a:hover::before {
+    height: calc(100% + 2px);
+}
+
+header .actions {
+    gap: 53px;
+}
+
+header button {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+header button.menu span {
+    display: block;
+    width: 27px;
+    height: 2px;
+    background-color: var(--primary-color);
+    margin-bottom: 4px;
+}
+
+#offcanvas-toggler {
+    display: none;
+}
+
+#offcanvas-toggler:checked + .offcanvas-nav {
+    right: 0;
+}
+
+#offcanvas-toggler:checked + .offcanvas-nav::before {
+    opacity: 1;
+    width: calc(100vw - var(--offcanvas-nav-width));
+}
+
+header .offcanvas-nav::before {
+    content: "";
+    width: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    left: calc(var(--offcanvas-nav-width) - 100vw);
+    opacity: 0;
+    transition: opacity .5s ease-in-out, 
+                width .3s ease-in-out;
+}
+
+header .offcanvas-nav {
+    position: fixed;
+    top: 0;
+    right: -430px;
+    background-color: white;
+    width: var(--offcanvas-nav-width);
+    height: 100vh;
+    z-index: 1000;
+    padding: 40px;
+    transition: right .5s ease-in-out;
+}
+
+header .offcanvas-nav .internal-links {
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 38px;
+    margin-bottom: 38px;
+}
+
+header .offcanvas-nav .internal-links:nth-child(2) {
+    border-bottom-width: 4px;
+    margin-bottom: 0;
+}
+
+header .offcanvas-nav .internal-links a {
+    font-size: 26px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 400;
+    line-height: 28.5px;
+}
+
+header .offcanvas-nav .socials {
+    padding: 15px 0 40px;
+}
+
+header .offcanvas-nav .socials a {
+    text-transform: uppercase;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 18px;
+    font-family: Poppins;
+}
+
+header .offcanvas-nav .account {
+    gap: 10px;
+}
+
+header .offcanvas-nav .account li {
+    width: 100%;
+}
+
+header .offcanvas-nav .account a {
+    font-family: Poppins;
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: .4rem 1rem;
+    display: block;
+    font-weight: 400;
+    text-align: center;
+    border: 1px solid var(--primary-color);
+}
+
+header .offcanvas-nav .close-button {
+    display: flex;
+    justify-content: right;
+}
+
+section.intro {
+    background: url(../images/img1.png) no-repeat center center / cover;
+    height: 1206px;
+    position: relative;
+    margin-top: 107px;
+}
+
+section.intro .logo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+section.intro h2 {
+    color: white;
+    font-size: 75px;
+    font-weight: 300;
+    margin: 0;
+}
+
+section.intro p {
+    font-size: 18px;
+    color: white;
+    margin: 0;
+}
+
+section.intro .container {
+    height: 100%;
+}
+
+section.intro .contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}

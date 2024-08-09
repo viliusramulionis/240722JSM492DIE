@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables</title>
+    <style>
+        /* Pagrindinio elemento seletorius (html) */
+        :root { 
+            /* Kintamojo priskyrimas */
+            /* Kintamojo pavaidnime negali būti tarpų, jie turi būti pakeisti - simboliu */
+            /* Kintamojo pavadinimas prasideda -- simboliais */
+            --primary-color: rgb(155, 219, 44);
+        }
+
+        .heading {
+            color: var(--primary-color);
+        }
+
+        .sub-heading {
+            color:var(--primary-color);
+        }
+
+        p {
+            color:var(--primary-color);
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color:var(--primary-color);
+        }
+
+        /* Kintamūjų reikšmės gali būti perrašomos */
+        .heading {
+            --primary-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="heading">Lorem, ipsum dolor.</h2>
+    <h3 class="sub-heading">Lorem ipsum dolor sit amet.</h3>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, doloremque?</p>
+    <div class="box"></div>
+</body>
+</html>
