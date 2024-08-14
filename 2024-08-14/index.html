@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+    <script src="script.js"></script>
+    <script>
+        console.log(labas);
+
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); 
+        }
+
+        // console.log('Labas Pasauli');
+        // KAIP IŠVENGTI SINTAKSĖS KLAIDŲ NURODANT STRINGO TEKSTĄ
+        // console.log('UAB "Antakalnio Ligoninė"');
+        // console.log("UAB \"Antakalnio Ligoninė\"");
+
+        // KINTAMOJO DEKLARAVIMAS
+        let sunkusPavadinimas = 'Ford';
+
+        let pirmasSkaicius = 2023;
+        let antrasSkaicius = 1;
+
+        // Norint atlikti arirtmetinę operaciją kai bandoma rezultatą priskirti prie stringo
+        console.log('Pasirinktas gamintojas ' + sunkusPavadinimas + ' Gamybos metai: ' + (pirmasSkaicius + antrasSkaicius));
+        
+        // Pasvirų kabučių panaudojimas
+        console.log(`Pasirinktas gamintojas ${sunkusPavadinimas} Gamybos metai: ${pirmasSkaicius + antrasSkaicius}`);
+    
+        // Kondicinė logika
+        // = simbolis yra reikšmės priskyrimui skirtas operatorius
+        // == arba === yra lyginamieji operatoriai
+        // riestiniai skliaustai javascript kalboje nurodo apimtį (scope)
+        
+        let naujasSkaicius = 1980;
+        
+        // Jeigu kintamasis yra deklaruojamas tarp riestiniu skliaustu, jo reiksme bus neprieinama uz ju ribu
+        if(10 === 10) {
+            naujasSkaicius++;
+            console.log('Skaičiai yra lygūs');    
+        }
+        
+        console.log(`Naujas skaičius yra: ${naujasSkaicius}`);
+
+        
+        // Kintamųjų reikšmių keitimas
+        pirmasSkaicius = 10;
+        antrasSkaicius = '10';
+
+        // Duomens tipo tikrinimas
+        console.log(typeof pirmasSkaicius);
+        console.log(typeof antrasSkaicius);
+
+        // KONDICINĖ LOGIKA
+
+        // Du lygybės ženklai nurodo reikšmių tikrinimą, be duomens tipo
+        // Trys lygybės ženklai tikrina ir duomens tipą
+
+        if(pirmasSkaicius === antrasSkaicius) {
+            console.log('Pirmas ir antras skaičiai yra lygūs');
+        } else {
+            console.log('Kintamieji nėra vienodi');
+        }
+
+        // if(pirmasSkaicius === antrasSkaicius) {
+
+        // } else {
+        //     console.log('Kintamieji nėra vienodi');
+        // }
+
+        if(pirmasSkaicius !== antrasSkaicius) {
+            console.log('Kintamieji nėra vienodi tikrinant su !== operatoriumi');
+        } 
+
+        let taipArbaNe = true;
+
+        if(taipArbaNe) {
+            console.log('Kintamopjo taipArbaNe reikšmė yra teigiama');
+        }   
+
+        // console.log(pirmasSkaicius !== antrasSkaicius);
+
+        console.log(random(0, 100));
+
+        pirmasSkaicius = random(0, 100);
+        antrasSkaicius = random(0, 100);
+
+        console.log(pirmasSkaicius, antrasSkaicius);
+
+        // PIRMAS VARIANTAS:
+        if(pirmasSkaicius > antrasSkaicius) {
+            console.log('Pirmas skaičius didesnis už antrą');
+        } else {
+            if(pirmasSkaicius === antrasSkaicius) {
+                console.log('Skaičiai yra lygūs');
+            } else {
+                console.log('Antras skaicius yra didesnis už pirmą');
+            }
+        }
+
+        // ANTRAS VARIANTAS:
+        if(pirmasSkaicius > antrasSkaicius) {
+            console.log('Pirmas skaičius didesnis už antrą');
+        } else if(pirmasSkaicius === antrasSkaicius) {
+            console.log('Skaičiai yra lygūs');
+        } else {
+            console.log('Antras skaicius yra didesnis už pirmą');
+        }
+
+        // PAPILDOMA SĄLYGA
+        if(pirmasSkaicius > antrasSkaicius) {
+            console.log('Pirmas skaičius didesnis už antrą');
+        } else if(pirmasSkaicius === antrasSkaicius) {
+            console.log('Skaičiai yra lygūs');
+        } else if(pirmasSkaicius === 10) {
+            console.log('Pirmas skaičius yra lygus 10');
+        } else {
+            console.log('Antras skaicius yra didesnis už pirmą');
+        }
+
+        // STRINGŲ APDOROJIMAS
+
+        let stringas = 'Labas Pasauli';
+
+        // Kiekvieno simbolio atspausdinimas
+        console.log(stringas[0]);        
+        console.log(stringas[1]);        
+        console.log(stringas[2]);        
+        console.log(stringas[3]);        
+        console.log(stringas[4]);        
+        console.log(stringas[5]);        
+        console.log(stringas[6]);        
+        console.log(stringas[7]);        
+        console.log(stringas[8]);        
+        console.log(stringas[9]);        
+        console.log(stringas[10]);        
+        console.log(stringas[11]);        
+        console.log(stringas[12]);   
+
+        //Pagal nurodytą poziciją reikšmė nerasta  
+        console.log(stringas[13]);        
+
+        // Stringo ilgio susigrąžinimas
+        console.log(stringas.length);
+
+        let pozicija = 12;
+
+        console.log(stringas[pozicija]);
+    </script>
+</body>
+</html>
