@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods</title>
+</head>
+<body>
+    <script>
+        // STRING METHODS
+
+        let stringas = 'Labas Pasauli';
+
+        // Grąžina simbolį pagal nurodytą indeksą
+        console.log(stringas.charAt(8));
+        console.log(stringas[8]);
+
+        let vardas = 'Johnny';
+        let pavarde = 'Depp';
+
+        // Stringų sujungimas į vieną
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat
+        console.log(vardas.concat(pavarde, '1960m.'));
+
+        // Tikrinimas ar stringas baigiasi nurodytu simboliu ar simbolių kombinacija
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
+        
+
+        if(stringas.endsWith('auli')) {
+            console.log('Stringas baigiasi simboliais: auli');
+        }
+
+        // Tikrinimas ar stringe yra simbolis arba jų kombinacija
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
+        if(stringas.includes('Labas')) {
+            console.log('Stringe yra žodis Labas');
+        }
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
+        // Indekso paieška kuriuo prasideda ieškoma frazė
+
+        stringas = 'The method returns the index of the first occurrence of the specified substring at a position greater than or equal to';
+    
+        console.log('Pozicija: ' + stringas.indexOf('index'));
+
+        // Teksto pakartojimas nurodytą kiekį kartų
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
+
+        stringas = 'Hi'; 
+
+        console.log(stringas.repeat(10));
+
+
+        // Norint pakeisti simbolius stringe:
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+        // stringas[1] = 'y';
+
+        // console.log(stringas);
+
+        console.log(stringas.replace('i', 'y'));
+
+        stringas = 'The method returns the index of the first occurrence of the specified substring at a position greater than or equal to';
+    
+        console.log(stringas.replace('the', 'a'));
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll
+        // Norint pakeisti visus žodžius tekste
+
+        console.log(stringas.replaceAll('the', 'a'));
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+        // Norint konvertuoti raides į mažąsias
+
+        stringas = 'HELLO WORLD';
+
+        console.log(stringas.toLowerCase());
+
+        // Norint konvertuoti raides į didžiąsias
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+
+        stringas = 'hello world';
+
+        console.log(stringas.toUpperCase());
+
+        // Norint pašalinti stringo priekyje arba pabaigoje esančius tarpus
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim
+
+        stringas = '    Hello World     ';
+        console.log(stringas);
+        console.log(stringas.trim());
+
+
+
+
+        // NUMBER METHODS
+
+        let skaicius = 18;
+
+        // Skaičiaus konvertavimas į stringą
+        console.log(typeof skaicius.toString());
+
+        skaicius = 18.51621215641;
+        // Norint suapvalinti skaičių iki dviejų skaičių po kablelio
+        console.log(skaicius.toFixed(2));
+
+        skaicius = '18.51621215641';
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseInt
+        // Konvertuoja stringe esantį sveiką skaičių
+        console.log(parseInt(skaicius) + 2);
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseFloat
+        // Konvertuoja stringe esantį skaičių po kablelio
+        console.log(parseFloat(skaicius) + 2);
+
+        // ESM variantas (pliusas pries kintamajį)
+        console.log(2 + +skaicius);
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger
+        // Patikrinimas ar reikšmė yra sveikas skaičius
+
+        skaicius = 18.51621215641;
+
+        if(Number.isInteger(skaicius)) {
+            console.log('Tai yra sveikas skaičius');
+        } else {
+            console.log('Tai nėra sveikas skaičius');
+        }
+    </script>
+</body>
+</html>

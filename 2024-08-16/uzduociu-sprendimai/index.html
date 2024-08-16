@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užduočių sprendimai</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // Sukurkite 4 kintamuosius, kurie saugotų jūsų vardą, pavardę, gimimo metus ir šiuos metus (nebūtinai tikrus). Parašykite kodą, kuris pagal gimimo metus paskaičiuotų jūsų amžių ir naudodamas vardo ir pavardės kintamuosius atspausdintų tokį sakinį:"Aš esu Vardenis Pavardenis. Man yra XX metai(ų)".
+        let vardas = 'Vilius';
+        let pavarde = 'Ramulionis';
+        let gimimoMetai = 1990;
+        let sieMetai = 2024;
+
+        console.log(`Aš esu ${vardas} ${pavarde}. Man yra ${sieMetai - gimimoMetai} metai(ų)`);
+
+        // Sukurkite du kintamuosius ir naudodamiesi funkcija random() jiems priskirkite atsitiktines reikšmes nuo 0 iki 4. Didesnę reikšmę padalinkite iš mažesnės. Atspausdinkite rezultatą jį suapvalinę iki sveiko skaičiaus*.
+    
+        let pirmas = random(0, 4);
+        let antras = random(0, 4);
+        let rezultatas = 0;
+
+        console.log(pirmas, antras);
+
+        if(pirmas > antras) {
+            if(antras !== 0) { 
+                rezultatas = Math.round(pirmas / antras);
+            } else {
+                rezultatas = 'Dalyba iš nulio negalima';
+            }
+        } else if(pirmas === antras) {
+            rezultatas = 'Skaičiai yra lygūs';
+        } else {
+            if(pirmas !== 0) {
+                rezultatas = Math.round(antras / pirmas);
+            } else {
+                rezultatas = 'Pirmas skaičius yra nulis';
+            }
+        }
+
+        console.log(rezultatas);
+
+        // Naudokite funkcija random(). Sukurkite tris kintamuosius ir naudodamiesi funkcija random() jiems priskirkite atsitiktines reikšmes nuo 0 iki 25. Raskite ir atspausdinkite kintąmąjį turintį vidurinę reikšmę.
+    
+        pirmas = random(0, 25);
+        antras = random(0, 25);
+        let trecias = random(0, 25);
+
+        // pirmas = 15;
+        // antras = 10;
+        // trecias = 20;
+
+        console.log(pirmas, antras, trecias);
+
+        if(pirmas < antras) {
+            if(antras < trecias) {
+                console.log('Vidurinis skaičius: ' + antras);
+            }
+        } else {
+            if(pirmas < trecias) {
+                console.log('Vidurinis skaičius: ' + pirmas);
+            }
+        } 
+
+        let max = Math.max(pirmas, antras, trecias);
+        let min = Math.min(pirmas, antras, trecias);
+
+        rezultatas = (pirmas + antras + trecias) - (max + min);
+
+        console.log(rezultatas);
+
+        // Sukurkite keturis kintamuosius ir ​random() funkcija sugeneruokite jiems reikšmes nuo 0 iki 2. Suskaičiuokite kiek yra nulių, vienetų ir dvejetų.
+        
+        pirmas = random(0, 2);
+        antras = random(0, 2);
+        trecias = random(0, 2);
+        let ketvirtas = random(0, 2);
+
+        console.log(pirmas, antras, trecias, ketvirtas);
+        
+        let nuliai = 0;
+        let vienetai = 0;
+        let dvejetai = 0;
+
+        if(pirmas === 0) {
+            nuliai++;
+        }
+
+        if(antras === 0) {
+            nuliai++;
+        }
+
+        if(trecias === 0) {
+            nuliai++;
+        }
+
+        if(ketvirtas === 0) {
+            nuliai++;
+        }
+
+        if(pirmas === 1) {
+            vienetai++;
+        }
+
+        if(antras === 1) {
+            vienetai++;
+        }
+
+        if(trecias === 1) {
+            vienetai++;
+        }
+
+        if(ketvirtas === 1) {
+            vienetai++;
+        }
+
+        if(pirmas === 2) {
+            dvejetai++;
+        }
+
+        if(antras === 2) {
+            dvejetai++;
+        }
+
+        if(trecias === 2) {
+            dvejetai++;
+        }
+
+        if(ketvirtas === 2) {
+            dvejetai++;
+        }
+
+        console.log(`Nulių yra: ${nuliai}, Vienetų: ${vienetai}, Dvejetai: ${dvejetai}`);
+    </script>
+</body>
+</html>
