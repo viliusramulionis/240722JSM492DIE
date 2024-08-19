@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciklai (Loops)</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // Iteracinis ciklas
+        // while
+        // i (increment)
+
+        // let inkrementas = 0;
+
+        // while(inkrementas < 10) {
+        //     // Iteracija (Iteration)
+        //     console.log('CIKLAS SUKASI', inkrementas);
+        //     inkrementas++;
+        // }
+
+
+        // PENKTA UŽDUOTIS PASINAUDOJANT CIKLU
+
+        console.log('--PIRMAS PAVYZDYS--');
+
+        let skaiciuKiekis = 0;
+        let rezultatas = '';
+
+        while(skaiciuKiekis < 3) {
+            let skaicius = random(-10, 10);
+
+            if(skaicius < 0) {
+                rezultatas += `[${skaicius}]`;
+            }
+
+            if(skaicius === 0) {
+                rezultatas += `(${skaicius})`;
+            }
+
+            if(skaicius > 0) {
+                rezultatas += `{${skaicius}}`;
+            }
+
+            skaiciuKiekis++;
+        }
+
+        console.log(rezultatas);
+
+        // NULIU VIENETU IR DVEJETU SKAICIAVIMAS PASINAUDOJANT CIKLU
+
+        console.log('--ANTRAS PAVYZDYS--');
+
+        let nuliai = 0;
+        let vienetai = 0;
+        let dvejetai = 0;
+
+        skaiciuKiekis = 0;
+
+        while(skaiciuKiekis < 3) {
+            let skaicius = random(0, 2);
+
+            console.log(skaicius);
+            
+            if(skaicius === 0) {
+                nuliai++;
+            }
+
+            if(skaicius === 1) {
+                vienetai++;
+            }
+
+            if(skaicius === 2) {
+                dvejetai++;
+            }
+
+            skaiciuKiekis++;
+        }
+
+        console.log(nuliai, vienetai, dvejetai);
+       
+        // CIKLO STABDYMO PAVYZDYS PASINAUDOJANT KINTAMUOJU
+        // Scenarijus: Ciklas bus stabdomas jei iškrito skaičius 99. Kiekvieno ciklo eigoje generuojamas atsitiktinis skaičius nuo 0 iki 100
+        
+        console.log('--TREČIAS PAVYZDYS--');
+
+        let i = 0;
+        let judam = true;
+
+        while(judam) {
+            let skaicius = random(0, 100);
+
+            if(skaicius === 99) {
+                console.log('Tikslas pasiektas');
+                judam = false;
+            }
+
+            i++;
+        }
+
+        console.log(`Tikslui pasiekti prireikė: ${i} iteracijų`);
+
+
+        console.log('--KETVIRTAS PAVYZDYS--');
+
+        let skaicius = 0;
+        i = 0;
+
+        while(skaicius !== 99) {
+            skaicius = random(0, 100);
+            i++;
+        }
+
+        console.log(`Tikslui pasiekti prireikė: ${i} iteracijų`);
+
+        console.log('--PENKTAS PAVYZDYS--');
+        
+        // Komanda break nutraukia ciklą
+
+        while(true) {
+            let skaicius = random(0, 100);
+
+            if(skaicius === 99) {
+                console.log('Tikslas pasiektas');
+                break;
+            }
+        }
+
+        // LYGINIO SKAIČIAUS TIKRINIMAS
+        // Atspausdinkite visus skaičius nuo 55 iki 87 kurie yra lyginiai (poriniai)
+
+        console.log('--SESTAS PAVYZDYS--');
+
+        let startas = 55;
+
+        while(startas <= 87) {
+            // remainder operatorius grąžina atgal liekaną kurią tikriname
+            // jei ji yra 0 tuomet skaičius yra lyginis
+
+            if(startas % 2 === 0) {
+                console.log(startas);
+            }
+            startas++;
+        }
+
+        // FOR CIKLAS
+        // break komanda galioja ir for cikle
+        console.log('--SEPTINTAS PAVYZDYS--');
+
+        for(let i = 0; i < 10; i++) {
+            console.log('Ciklas sukasi', i);
+        } 
+
+        console.log('--ASTUNTAS PAVYZDYS--');
+
+        for(let i = 10; i > 0; i--) {
+            console.log('Ciklas sukasi', i);
+        }   
+
+        console.log('--DEVINTAS PAVYZDYS--');
+
+        for(let i = 56; i < 87; i += 2) {
+            console.log(i);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loginiai operatoriai</title>
+</head>
+<body>
+    <script>
+        let pirmaSalyga = true;
+        let antraSalyga = true;
+        
+        if(pirmaSalyga) {
+            if(antraSalyga) {
+                console.log('BINGO');
+            }
+        }
+
+        // && (AND) operatorius nurodo, jog VISOS sąlygos turi būti teigiamos
+        if(pirmaSalyga && antraSalyga) {
+            console.log('BINGO');
+        }
+
+        let skaicius = 59;
+
+        if( skaicius !== 18 && 
+            skaicius > 0 && 
+            skaicius < 99
+        ) {
+            console.log('AND Sąlygos išpyldytos');
+        }
+
+        // || (OR) operatorius nurodo, kad bent viena sąlyga būtų išpildyta
+        
+        if(skaicius !== 59 || skaicius > 0 || skaicius < 99) {
+            console.log('OR sąlygos išpyldytos');
+        }
+        
+        let rodyti = true;
+
+        if(skaicius !== 59 || skaicius < 0 || skaicius > 99 || rodyti) {
+            console.log('OR sąlygos išpyldytos');
+        }
+
+        // ! pakeicia boolean reikšmę į atvirštinę (jei turim false, tuomet tampa true ir atvirkšičiai)
+       
+        if(!rodyti) { //false
+            console.log('BINGO');
+        }
+
+        rodyti = false;
+        
+        if(!rodyti) { //true
+            console.log('BINGO');
+        }
+
+        if((false && false && false) || true) {
+            console.log('SUJUNGUS OPERATORIUS GAUNAME BINGO');
+        }
+    
+
+        
+    </script>
+</body>
+</html>

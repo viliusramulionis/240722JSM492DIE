@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užduočių sprendimai</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // Naudokite funkcija random() Sukurkite ir atspausdinkite 3 skaičius nuo -10 iki 10. Skaičiai mažesni už 0 turi būti  laužtiniuose skliaustuose [], 0 -  (), didesni už 0 {}.
+        console.log('--PENKTA UŽDUOTIS--');
+
+        let pirmasSkaicius = random(-10, 10);
+        let antrasSkaicius = random(-10, 10);
+        let treciasSkaicius = random(-10, 10);
+
+        let rezultatas = '';
+        
+        console.log(pirmasSkaicius, antrasSkaicius, treciasSkaicius);
+
+        if(pirmasSkaicius < 0) {
+            rezultatas += `[${pirmasSkaicius}] `;
+        }
+
+        if(pirmasSkaicius === 0) {
+            rezultatas += `(${pirmasSkaicius}) `;
+        }
+
+        if(pirmasSkaicius > 0) {
+            rezultatas += `{${pirmasSkaicius}} `;
+        }
+
+        if(antrasSkaicius < 0) {
+            rezultatas += `[${antrasSkaicius}] `;
+        }
+
+        if(antrasSkaicius === 0) {
+            rezultatas += `(${antrasSkaicius}) `;
+        }
+
+        if(antrasSkaicius > 0) {
+            rezultatas += `{${antrasSkaicius}} `;
+        }
+
+        if(treciasSkaicius < 0) {
+            rezultatas += `[${treciasSkaicius}] `;
+        }
+
+        if(treciasSkaicius === 0) {
+            rezultatas += `(${treciasSkaicius}) `;
+        }
+
+        if(treciasSkaicius > 0) {
+            rezultatas += `{${treciasSkaicius}} `;
+        }
+
+        console.log(rezultatas);
+
+        // Įmonė parduoda žvakes po 1 EUR. Perkant daugiau kaip 1000 vienetų taikoma 3 % nuolaida, 
+        // daugiau kaip 2000 vienetų- 4 % nuolaida. Parašykite programą, kuri skaičiuos žvakių 
+        // kainą ir atspausdintų atsakymą kiek žvakių ir kokia kaina perkama. 
+        // Žvakių kiekį generuokite random() funkcija nuo 5 iki 3000.
+        
+        console.log('--SESTA UŽDUOTIS--');
+
+        let zvakiuKiekis = random(5, 3000);
+        let nuolaida = 0;
+
+        if(zvakiuKiekis > 1000) {
+            nuolaida = 0.03;
+        }
+
+        if(zvakiuKiekis > 2000) {
+            nuolaida = 0.04;
+        }
+
+        console.log('Perkamas kiekis:', zvakiuKiekis);
+        console.log('Suma yra:', (zvakiuKiekis - (zvakiuKiekis * nuolaida)).toFixed(2));
+
+        //Naudokite funkcija random() Sukurkite tris kintamuosius su atsitiktinėm reikšmėm nuo 0 iki 100. 
+        //Paskaičiuokite jų aritmetinį vidurkį. Ir aritmetinį vidurkį atmetus tas reikšmes, 
+        //kurios yra mažesnės nei 10 arba didesnės nei 90. Abu vidurkius atspausdinkite. 
+        //Rezultatus apvalinkite iki sveiko skaičiaus.
+
+        console.log('--SEPTINTA UŽDUOTIS--');
+
+        pirmasSkaicius = random(0, 100);
+        antrasSkaicius = random(0, 100);
+        treciasSkaicius = random(0, 100);
+
+        let vidurkis = (pirmasSkaicius + antrasSkaicius + treciasSkaicius) / 3;
+
+        console.log(pirmasSkaicius, antrasSkaicius, treciasSkaicius);
+
+        console.log(`Aritmetinis vidurkis: ${Math.round(vidurkis)}`);
+
+        let suma = 0;
+        let skaiciuKiekis = 0;
+
+        // if(pirmasSkaicius >= 10) {
+        //     if(pirmasSkaicius <= 90) {
+        //         suma += pirmasSkaicius;
+        //         skaiciuKiekis++; 
+        //     } 
+        // }
+
+        // if(antrasSkaicius >= 10) {
+        //     if(antrasSkaicius <= 90) {
+        //         suma += antrasSkaicius;
+        //         skaiciuKiekis++; 
+        //     } 
+        // }
+
+        // if(treciasSkaicius >= 10) {
+        //     if(treciasSkaicius <= 90) {
+        //         suma += treciasSkaicius;
+        //         skaiciuKiekis++; 
+        //     } 
+        // }
+
+        
+        if(pirmasSkaicius >= 10 && pirmasSkaicius <= 90) {
+            suma += pirmasSkaicius;
+            skaiciuKiekis++; 
+        }
+
+        if(antrasSkaicius >= 10 && antrasSkaicius <= 90) {
+            suma += antrasSkaicius; 
+            skaiciuKiekis++; 
+        }
+
+        if(treciasSkaicius >= 10 && treciasSkaicius <= 90) {
+            suma += treciasSkaicius; 
+            skaiciuKiekis++; 
+        }
+        
+        console.log(`Aritmetinis vidurkis atmetus skaičius: ${Math.round(suma / skaiciuKiekis)}`);
+
+    </script>
+</body>
+</html>
