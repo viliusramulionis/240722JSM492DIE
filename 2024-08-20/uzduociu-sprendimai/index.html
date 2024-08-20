@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uzduociu sprendimai</title>
+
+    <style>
+        body {
+            word-break: break-all;
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // Naršyklėje nupieškite linija iš 400 “*”. 
+        // Naudodami css stilių “suskaldykite” liniją taip, kad visos žvaigždutės matytusi ekrane;
+        // Programiškai “suskaldykite” žvaigždutes taip, kad vienoje eilutėje nebūtų daugiau nei 50 “*”; 
+
+        document.write('<h1>Pirma Užduotis A)</h1>');
+
+        for(let i = 0; i < 400; i++) {
+            document.write('*');
+        }
+
+        document.write('<h1>Pirma Užduotis B)</h1>');
+
+        for(let i = 0; i < 400; i++) {
+            if(i % 50 === 0) {
+                document.write('<br>');
+            }
+
+            document.write('*');
+        }
+
+        // Sugeneruokite 300 atsitiktinių skaičių nuo 0 iki 300, atspausdinkite juos atskirtus 
+        // tarpais ir suskaičiuokite kiek tarp jų yra didesnių už 150.  
+        // Skaičiai didesni nei 275 turi būti raudonos spalvos.
+
+        document.write('<h1>Antra užduotis:</h1>');
+       
+        let didesniUz150 = 0;
+        let rezultatas = '';
+
+        for(let i = 0; i < 300; i++) {
+            let skaicius = random(0, 300);
+
+            if(skaicius > 150) {
+                didesniUz150++;
+            }
+
+            if(skaicius > 275) {
+                rezultatas += '<span class="red">' + skaicius + '</span>, ';
+            } else {
+                rezultatas += skaicius + ', ';
+            }
+        }
+
+        document.write(`<p>${rezultatas}</p>`);
+
+        document.write(`Skaičių didesnių nei 150 yra: ${didesniUz150}`);
+
+        document.write('<h1>Trečia užduotis:</h1>');
+
+        // Vienoje eilutėje atspausdinkite visus skaičius nuo 1 iki 3000, 
+        //kurie dalijasi iš 77 be liekanos. Skaičius atskirkite kableliais. 
+        //Po paskutinio skaičiaus kablelio neturi būti. Jeigu reikia, 
+        //panaudokite css, kad visi rezultatai matytusi ekrane.
+
+        rezultatas = '';
+
+        let dydis = 3000;
+        let daliklis = 77;
+
+        for(let skaicius = 1; skaicius <= dydis; skaicius++) {
+            // let kablelis = ', ';
+
+            // if(skaicius === 2926)
+            //     kablelis = '';
+
+            // if(skaicius % 77 === 0) {
+            //     rezultatas += skaicius + kablelis;
+            // }
+
+
+            if(skaicius % daliklis === 0) {
+                rezultatas += skaicius + (skaicius === dydis - (dydis % daliklis) ? '' : ', ');
+            }
+        }
+
+        document.write(rezultatas);
+
+        // Nupieškite kvadratą iš “*”, kurio kraštinės sudaro 100 “*”. 
+        // Panaudokite css stilių, kad kvadratas ekrane atrodytų kvadratinis. 
+        // (Priskirkite reikiamą eilučių aukštį)
+
+        document.write('<h1>Ketvirta užduotis:</h1>');
+        
+        dydis = 3;
+        rezultatas = '';
+
+        for(let eilute = 0; eilute < dydis; eilute++) {
+            for(let stulpelis = 0; stulpelis < dydis; stulpelis++) {
+                if(eilute === stulpelis) {
+                    rezultatas += '<span class="red">*</span>';
+                } else {
+                    rezultatas += '*';
+                }
+            }
+            rezultatas += '<br>';
+        }
+
+        document.write(rezultatas);
+
+    </script>
+</body>
+</html>

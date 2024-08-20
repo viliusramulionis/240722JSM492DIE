@@ -175,11 +175,26 @@
 
         for(let i = 0; i < 400; i++) {
             document.write('*');
+            // console.log(i, i % 50);
+            if(i % 50 === 0) 
+                document.write('<br>');
         }
         
         document.write('<h1>Antra užduotis</h1>');
 
         document.write('*******');
+
+        document.write('<h1>Kvadratas</h1>');
+
+        let size = 3;
+
+        for(let y = 0; y < size; y++) {
+            for(let x = 0; x < size; x++) {
+                document.write('*');
+            }
+            document.write('<br>');
+        }
+
 
     </script>
 </body>
