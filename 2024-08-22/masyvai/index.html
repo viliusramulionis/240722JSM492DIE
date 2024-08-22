@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masyvai</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // let pirmas = 10;
+        // let antras = 'Labas';
+        // let trecias = false;
+        // let ketvirtas = 10.11;
+
+        // for(let i = 0; i < 4; i++) {
+        //     console.log(pirmas);
+        // }
+
+        // Masyvo kūrimas (Array)
+
+        let masyvas = [10, 'Labas', false, 10.11];
+        //              0    1       2      3
+
+        // Masyvo atvaizdavimas
+        // console.log(masyvas);
+
+        // Elemento paėmimas iš masyvo
+        console.log(masyvas[0]); 
+        console.log(masyvas[1]); 
+        console.log(masyvas[2]); 
+        console.log(masyvas[3]);
+        
+        console.log('--MASYVO REIKŠMĖS IŠ CIKLO--');
+
+        // Masyvo apdorojimas ciklo pagalba
+        for(let i = 0; i < 4; i++) {
+            console.log(masyvas[i]);
+        }
+
+        console.log('--SKAIČIŲ TIKRINIMAS--');
+
+        masyvas = [58, 15, 2, 99, 66, 77, 45, 89, 43];
+
+        // Masyvo ilgio paėmimas
+
+        console.log('Masyvo ilgis: ', masyvas.length);
+
+        // Atspausdinkite visus skaičius esančius masyve kurie yra didesni nei 20;
+
+        for(let i = 0; i < masyvas.length; i++) {
+            if(masyvas[i] > 20) {
+                console.log(masyvas[i]);
+            }
+        }
+
+        // Const deklaravimas 
+
+        let pavadinimas = 'UAB "Gera firma"';
+
+        pavadinimas = 'UAB "Bloga įmonė"';
+
+        const brandas = 'Pepsi';
+
+        // brandas = 'Sprite';
+
+        // let kaina = '$19.99';
+        // kaina = 19.99;
+
+        const naujasMasyvas = ['Pepsi', 'Sprite', 'Fanta'];
+
+        // Naujos reikšmės pridėjimas į masyvą:
+        naujasMasyvas[3] = 'Coke';
+
+        // Reikšmės keitimas masyve:
+        naujasMasyvas[2] = 'Dr. Pepper';
+
+        // Naujos reikšmės pridėjimas į masyvo galą
+        naujasMasyvas[naujasMasyvas.length] = 'Vytautas';
+
+        console.log(naujasMasyvas);
+
+        // BLOGA PRAKTIKA:
+        // naujasMasyvas['Labas'] = 'Pasauli';
+        // naujasMasyvas[15] = 'Neptūnas';
+
+        // delete - rezervuotas žodis javascript kalboje
+        // komandos delete NENAUDOJAM norint ištrinti elementus iš masyvo 
+        // delete naujasMasyvas[2];
+
+        // indeksas (index) - reikšmės pozicija masyve
+        // reikšmė (value)
+        // elementas (element) - indekso ir reikšmės apibrėžimas
+
+        // UŽDUOTIS: 
+        // SUKURKITE 20 ELEMENTŲ MASYVĄ KURIO REIKŠMĖS BŪTŲ SKAIČIAI NUO 15 IKI 99. 
+        // IŠ SUGENERUOTO MASYVO IŠTRINKITE VISUS SKAIČIUS KURIE YRA DIDESNI NEI 70
+
+        // Masyvo kurimas
+        const skaiciuMasyvas = [];
+
+        for(let i = 0; i < 20; i++) {
+            skaiciuMasyvas[i] = random(15, 99);
+        }
+
+        // Masyvo apdorojimas
+        const apdorotasMasyvas = [];
+
+        for(let i = 0; i < skaiciuMasyvas.length; i++) {
+            if(skaiciuMasyvas[i] <= 70) {
+                apdorotasMasyvas[apdorotasMasyvas.length] = skaiciuMasyvas[i]; 
+            } 
+        }
+
+        console.log(apdorotasMasyvas);
+
+        // Array metodai
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+        // Push metodas skirtas pridėti naujai reikšmėi arba reikšmėms į masyvo pabaigą
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+        
+        const varduMasyvas = ['Marius', 'Jana', 'Jolita'];
+
+        varduMasyvas.push('Tautvydas', 'Edvinas', 'Karolis');
+
+        console.log(varduMasyvas);
+
+        // unshift metodas skirtas talpinti elementus į masyvo priekį
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift
+        
+        varduMasyvas.unshift('Dominykas');
+
+        console.log(varduMasyvas);
+
+        // Norint sujungti du masyvus į vieną:
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
+        
+        const pirmasMasyvas = [10, 20, 30, 40];
+        const antrasMasyvas = [50, 60, 70, 80];
+
+        const sujungtasMasyvas = pirmasMasyvas.concat(antrasMasyvas);
+
+        console.log(sujungtasMasyvas);
+
+        // Tikrinimas ar masyve egzistuoja nurodyta reikšmė
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
+
+        if(sujungtasMasyvas.includes(80)) {
+            console.log('Skaičius 80 yra patalpintas masyve');
+        }
+
+        // Norint surasti reikšmės indeksą (pirmajį)
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+        
+        sujungtasMasyvas.push(80);
+
+        console.log(sujungtasMasyvas);
+
+        console.log(sujungtasMasyvas.indexOf(80));
+
+        // Norint dev toolsuose atvaizduoti masyvą toje pozicijoje
+        console.log('Spread operatoriaus panaudojimas', [...sujungtasMasyvas]); 
+
+        // Masyvo atvaizdavimas naršyklėje
+        document.write(sujungtasMasyvas);
+
+        // Masyvo sujungimas į stringą
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
+
+        document.write(sujungtasMasyvas.join('-'));
+
+        // Norint susigrąžinti reikšmės indeksą (paskutinį)
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf
+
+        const indeksas = sujungtasMasyvas.lastIndexOf(80);
+
+        console.log(indeksas);
+
+        // Norint pašalinti paskutinį elementą iš masyvo
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop
+
+        sujungtasMasyvas.pop();
+
+        console.log(sujungtasMasyvas);
+
+        // Norint apversti elementų rūšiavimą
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse
+
+        const apverstasMasyvas = sujungtasMasyvas.reverse();
+
+        console.log(apverstasMasyvas);
+
+        // Norint pašalinti pirmą elementą iš masyvo
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift
+
+        sujungtasMasyvas.shift();
+        
+        console.log(sujungtasMasyvas);
+
+        // Norint paimti tam tikrą kiekį elementų iš masyvo
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+    
+        const iskirptiElementai = sujungtasMasyvas.slice(2, 5);
+
+        console.log(iskirptiElementai);
+
+        // Norint ištrinti elementus iš masyvo pagal nurodytas pozicijas
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+
+        sujungtasMasyvas.splice(2, 3);
+
+        console.log(sujungtasMasyvas);
+    </script>
+</body>
+</html>
