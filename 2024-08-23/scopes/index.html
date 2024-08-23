@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scopes</title>
+</head>
+<body>
+    <script>
+        // KETURI KINTAMŪJŲ DEKLARAVIMO BŪDAI
+        // OG - Originalus deklaravimas
+        pirmas = 10;
+        // VELIAU ATSIRADES PAPILDYMAS
+        var antras = 10;
+        // ESM VARIANTAI:
+        let trecias = 10;
+        const ketvirtas = 10;
+
+        console.log(pirmas, antras, trecias, ketvirtas);
+
+        // SCOPE (APIMTIES ŽYMĖJIMAS) if, else, else if, while, do while, for
+        // BLOCK SCOPE PAVYZDYS:
+        {
+            let vaisius = 'obuolys';
+        }
+
+        // KUOMET KINTAMASIS DEKLARUOTAS BLOCK SCOPE RIBOSE, UŽ JŲ JO NEGALIMA PASIEKTI 
+        // console.log(vaisius);
+
+        // GLOBAL SCOPE (Globali Apimtis)
+        let vaisius = 'pomidoras';
+
+        {
+            console.log(vaisius);
+        }
+
+        // VAR PANAUDOJIMAS
+        // DEKLARUOTAM KINTAMAJAM VAR BUDU NEGALIOJA BLOCK SCOPE
+        {
+            var uoga = 'braske';
+        }
+
+        console.log(uoga);
+
+        // FUNCTION SCOPE (FUNKCIJOS APIMTIS)
+        function prekes() {
+            televizorius = 'SONY';
+        }
+
+        prekes();
+
+        console.log(televizorius);
+
+        // PAVYZDYS
+
+        let skaiciuotuvas = 'Labas Pasauli';
+
+        for(skaiciuotuvas = 0; skaiciuotuvas < 10; skaiciuotuvas++) {
+        }
+
+        console.log(skaiciuotuvas);
+
+        
+    </script>
+</body>
+</html>

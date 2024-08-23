@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masyvų metodai</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // Sugeneruokite masyvą iš 30 elementų (indeksai nuo 0 iki 29), kurių reikšmės yra atsitiktiniai skaičiai nuo 5 iki 25.
+
+        const masyvas = [];
+
+        for(let i = 0; i < 30; i++) {
+            // masyvas.push(random(5, 25));
+            masyvas[i] = random(5, 25);
+        }   
+
+        // console.log(masyvas);
+
+        // Sukurkite naują masyvą, kurio reikšmės yra 1 uždavinio masyvo reikšmes minus tos reikšmės indeksas;
+
+        // SPRENDIMAS PASINAUDOJANT FOR CIKLU
+        // const naujasMasyvas = [];
+
+        // for(let i = 0; i < masyvas.length; i++) {
+        //     naujasMasyvas[i] = masyvas[i] - i;
+        // }
+
+        // console.log(naujasMasyvas);
+
+        // MAP METODAS
+
+        // Map metodas skirtas apdoroti masyvą ir grąžinti naują kuris suformuotas pagal pateiktą sąlygą
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+
+        // .map() metodas priimą parametrą kuris yra funkciją
+        // callback - atsišaukimo funkcija
+        // no name function
+
+        // masyvas.map(function(reiksme, indeksas, ogMasyvas) {
+        //     console.log(reiksme, indeksas, ogMasyvas);
+        // });
+
+        // JEIGU NĖRA REIKALINGI LIKĘ PARAMETRAI, JŲ GALIMA IR NEVARDINTI FUNKCIJOJE
+        // masyvas.map(function(reiksme) {
+        //     console.log(reiksme);
+        // });
+
+        // UZDUOTIS
+
+        // Sukurkite naują masyvą, kurio reikšmės yra 1 uždavinio masyvo reikšmes minus tos reikšmės indeksas;
+
+        // PIRMAS VARIANTAS:
+        // const naujasMasyvas = masyvas.map(function(reiksme, indeksas) {
+        //     return reiksme - indeksas;
+        // });
+
+        // console.log(naujasMasyvas);
+
+        // ANTRAS VARIANTAS SU ARROW FUNKCIJA
+        // JEIGU NAUDOJAME ARROW FUNKCIJA KURIOJE YRA RETURN KOMANDA, TUOMET RIESTINIAI SKLIAUSTAI IR RETURN KOMANDA TAMPA NEREIKALINGI
+        const naujasMasyvas = masyvas.map((reiksme, indeksas) => reiksme - indeksas);
+
+        console.log(naujasMasyvas);
+
+        // Sukurkite naują masyvą kurio reikšmės yra padaugintos iš dviejų
+        // KUOMET TURIME ARROW FUNKCIJĄ KURIOJE NAUDOJAMAS TIK VIENAS PARAMETRAS, SKLIAUSTELIAIS JO APGLIAUBINĖTI NEBEREIKIA
+        const daugintasMasyvas = masyvas.map(reiksme => reiksme * 2);
+
+        console.log(daugintasMasyvas);
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+        // Suraskite pirmą indeksą, kurio elemento reikšmė didesnė už 10;
+
+        // grąžinama reikšmės iš findIndex metodo:
+        // skaičius -1 = nepavyko nieko rasti pagal nurodytą sąlygą
+        // skaičius didesnis už -1 grąžina indeksą
+
+        const pirmasIndeksas = masyvas.findIndex(reiksme => reiksme > 10);
+
+        console.log(pirmasIndeksas);
+
+        // VEIKIMO SIMULIAVIMAS
+
+        function ieskokIndekso(masyvas, funkcija) {
+            for(let i = 0; i < masyvas.length; i++) {
+                if(funkcija(masyvas[i], i, masyvas)) {
+                    return i;
+                }
+            }
+        }
+
+        console.log(ieskokIndekso(masyvas, function(reiksme, indeksas, masyvas) {
+            if(reiksme > 10)
+                return true;
+        }));
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+        // Grąžina atgal surastą reikšmę
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLast
+        // Grąžina paskutinę surastą reikšmę
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLastIndex
+        // Grąžina paskutinį surastą indeksą
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+        // Grąžina galutinę suskaičiuotą sumą
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+        // Išrūšiuoja masyvą
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+        // Grąžina atgal išfiltruotas masyvas
+    </script>
+</body>
+</html>

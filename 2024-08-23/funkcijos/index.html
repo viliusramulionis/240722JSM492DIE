@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcijos</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // Funkcijos deklaravimas:
+        // raktažodis funkcion
+        // tuomet nurodomas norimas pavadinimas
+        // tarp skliaustelių nuorodomi parametrų pavadinimai
+        // kiekvienas parametras atskiriamas kableliu
+        function pirmaFunkcija(pirmas, antras, trecias) {
+            console.log(pirmas, antras, trecias);
+        }
+
+        // Parametrų tikrinimas
+        // function pirmaFunkcija(pirmas, antras, trecias) {
+        //     if( typeof pirmas === 'string' && 
+        //         typeof antras === 'string' && 
+        //         typeof trecias === 'string'
+        //     ) {
+        //         console.log(pirmas.trim(), antras.trim(), trecias.trim());
+        //     }
+        // }
+
+        // funkcijos iššaukimas (initiate)
+        // iššaukiant funkciją nurodomi argumentai (arguments)
+        pirmaFunkcija('BMW', 'Opel', 'Audi');
+        
+        // FUNKCIJOS PERPANAUDOJIMAS
+        // argumentas = input
+        // rezultatas = output
+
+        function suma(pirmas, antras) {
+            console.log(pirmas + antras);
+        }
+        
+        suma(5, 28);
+        suma(8, 11);
+        suma(9, 55);
+
+        // PRAKTINIS PANAUDOJIMAS SU UŽDUOTIMI
+
+        function skaiciuGeneratorius(kiekis, nuo, iki, raudoni) {
+            let didesniUz150 = 0;
+            let rezultatas = '';
+
+            for(let i = 0; i < kiekis; i++) {
+                let skaicius = random(nuo, iki);
+
+                if(skaicius > 150) {
+                    didesniUz150++;
+                }
+
+                if(skaicius > raudoni) {
+                    rezultatas += '<span style="color: red;">' + skaicius + '</span>, ';
+                } else {
+                    rezultatas += skaicius + ', ';
+                }
+            }
+
+            document.write(`<p>${rezultatas}</p>`);
+        }
+
+        skaiciuGeneratorius(300, 0, 300, 275);
+        skaiciuGeneratorius(200, 100, 500, 375);
+        skaiciuGeneratorius(500, 50, 900, 125);
+
+        function stringoGeneratorius(ilgis) {
+            const string = 'abcdefghijklmnopqrstuvwxyz';
+            let rezultatas = '';
+            
+            for(let i = 0; i < ilgis; i++) {
+                rezultatas += string[random(0, string.length - 1)];
+            }
+
+            // Jeigu funkcija grąžina undefined atsakymas, nėra priskirtos return komandos
+            
+            return rezultatas;
+        }
+
+        let stringas = stringoGeneratorius(3);
+
+        if(stringas.includes('a')) {
+            console.log('Stringe radome a raidę');
+        }
+
+        // Aktyvavus return komandą visas likęs kodas nėra skaitomas
+
+        function deduct(a, b) {
+            if(a < b) 
+                return 'Neteisingi parametrai';
+
+            return a - b;
+        }
+
+        console.log(deduct(10, 5));
+        console.log(deduct(5, 10));
+
+        // Skliausteliai šalia funkcijos pavadinimo nurodant argumentus nurodo iniciavima 
+
+        // function divide(a, b) {
+        //     return a / b;
+        // }
+
+        // console.log(divide(5, 2));
+
+        const divide = function(a, b) {
+            return a / b;
+        }
+
+        console.log(divide(5, 2));
+
+        // Arrow funkcijos aprašymas
+
+        const multiply = (a, b) => {
+            return a * b;
+        }
+
+        console.log(multiply(5, 10));
+        
+    </script>
+</body>
+</html>
