@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daugiamaciai masyvai</title>
+</head>
+<body>
+    <script>
+            console.log('--MULTIDIMACIAI MASYVAI---');
+
+            // const masyvas = [
+            //     [10, 20, 30],
+            //     [40, 50, 60]
+            // ];
+
+            // for(let i = 0; i < masyvas.length; i++) {
+            //     for(let x = 0; x < masyvas[i].length; x++) {
+            //         console.log(masyvas[i][x]);
+            //     }   
+            // }
+
+            const masyvas = [
+                [10, 20, 30, 40, 50],
+                [10, 20, 30, 40, 50],
+                [10, 20, 30, 40, 50],
+                [10, 20, 30, 40, 50],
+                [10, 20, 30, 40, 50],
+                [10, 20, 30, 40, 50],
+                [10, 20, 30, 40, 50],
+                [10, 20, 30, 40, 50],
+                [10, 20, 30, 40, 50],
+                [10, 20, 30, 40, 50],
+            ];
+
+            console.log(masyvas);
+            
+            const naujasMasyvas = [10, 20, 30, 40, 50];
+
+            const galutineSuma = naujasMasyvas.reduce((suma, dabartineReiksme) => {
+                console.log(suma, dabartineReiksme);
+                return suma + dabartineReiksme;
+            }, 0);
+
+            console.log('Galutine suma', galutineSuma);
+
+            let suma = 0;
+
+            for(let i = 0; i < naujasMasyvas.length; i++) {
+                suma += naujasMasyvas[i];
+            }
+
+            console.log(suma);
+
+            console.log(masyvas[0][0] + masyvas[1][2] + masyvas[2][4]);
+
+
+    </script>
+</body>
+</html>

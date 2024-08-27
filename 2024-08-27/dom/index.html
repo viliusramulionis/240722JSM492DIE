@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model (DOM)</title>
+    <style>
+        .blue {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Labas Pasauli</h1>  
+    <div class="result"></div> 
+    <ul>
+        <li>Audi</li>
+        <li>BMW</li>
+        <li>WW</li>
+    </ul> 
+    <h2 id="tekstas"></h2>
+    <div class="elements"></div>
+    <script>
+        console.log(document);
+        // Elemento filtravimas pasinaudojant CSS selektoriais
+        console.log(document.querySelector('h1'));
+
+        // Norint priskirti naują tekstą esantį elemente naudojame savybę textContent
+        document.querySelector('h1').textContent = 'Hello World';
+
+        // Norint susigrąžinti tekstą patalpintą ieškomame elemente
+        console.log(document.querySelector('h1').textContent);
+        
+        let a = 10;
+        let b = 30;
+
+        // document.querySelector('div').textContent = a + b;
+        // document.querySelector('div.result').textContent = a + b;
+        document.querySelector('.result').textContent = a + b;
+
+        document.querySelector('ul li:nth-child(2)').textContent = 'Ford';
+
+        // innerText savybė
+        // gerojoje praktikoje geriau naudoti textContent savybę
+        document.querySelector('#tekstas').innerText = 'Labas Pasauli';
+
+        // Norint patalpinti HTML kodą
+        // document.querySelector('.elements').textContent = '<h6>A</h6>';
+        document.querySelector('.elements').innerHTML = '<h3 class="blue">A</h3>';
+    </script>
+</body>
+</html>

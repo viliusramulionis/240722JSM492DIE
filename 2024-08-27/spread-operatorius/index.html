@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator</title>
+</head>
+<body>
+    <script>
+        const masyvas = [15, 20, 25];
+
+        console.log(masyvas);
+
+        console.log(...masyvas);
+
+        function priimamParametrus(...parametrai) {
+            console.log(parametrai);
+        }
+
+        priimamParametrus(15, 20, 25);
+
+        function max(...reiksmes) {
+            let max = 0;
+            for(let i = 0; i < reiksmes.length; i++) {
+                if(reiksmes[i] > max)
+                    max = reiksmes[i]
+            }
+
+            return max;
+        }
+
+        const didziausiasSkaicius = max(10, 20, 30, 88, 5, 99, 100);
+        console.log(didziausiasSkaicius);
+
+        // Aprašykite funkciją kuri priimtų neribotą argumentų kiekį, kurių reikšmės būtų vardai 
+        // ir patikrintų ar stringe yra įrašytų lietuviškų raidžių
+        function vardai(...varduMasyvas) {
+            console.log(varduMasyvas);
+            const lietuviskosRaides = 'ąčęėįšųūž';
+
+            for(let i = 0; i < varduMasyvas.length; i++) {
+                for(let x = 0; x < lietuviskosRaides.length; x++) {
+                    if(varduMasyvas[i].includes(lietuviskosRaides[x])) {
+                        return true;
+                    }
+                } 
+            }
+            return false;
+        }
+
+        if(vardai('Ieva', 'Ąžuolas')) {
+            console.log('Kažkuriame varde yra lietuviška reidė');
+        }
+
+    </script>
+</body>
+</html>

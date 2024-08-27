@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Timeout ir Set Interval</title>
+    <style>
+        body {
+            background-color: bisque;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            height: 100vh;
+            margin: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="result"></div>
+    <script>
+        // Pirmas argumentas funkcija kurioje surašomi veiksmai kas turėtų įvykti
+        // Antras argumentas laiko tarpas po kurio veiksmai turėtų būti įgyvendinti
+        // Laikas žymimas mili sekundėmis
+        // 1s = 1000ms
+        setTimeout(() => {
+            console.log('Veiksmas įvyko');
+        }, 5000);
+
+        // Kas vieną sekundę sukuriamas veiksmas
+        setInterval(() => {
+            console.log('Praėjo sekundė');
+        }, 1000);
+
+        let counter = 1;
+
+        document.querySelector('.result').textContent = counter;
+
+        setInterval(() => {
+            counter++;
+            document.querySelector('.result').textContent = counter;
+        }, 1000);
+    </script> 
+</body>
+</html>

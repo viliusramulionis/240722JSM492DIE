@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Objektai</title>
+</head>
+<body>
+    <script>
+        const masyvas = [];
+        console.log(typeof masyvas);
+        console.log(masyvas);
+
+
+        // Objektuose indeksas yra vadinamas raktazodziu (key)
+        // reiksme = value
+        const objektas = {
+            raktazodis: 'reiksme',
+            skaicius: 0,
+            stringas: 'UAB "Gera imone"',
+            boolean: false,
+            // metodas
+            funkcija: function() {
+                return true;
+            },
+            masyvas: [10, 20, 30]
+        };
+
+        console.log(objektas);
+
+        // Norint iš objekto paimti reikšmę
+        console.log(objektas.raktazodis);
+        console.log(objektas['raktazodis']);
+
+        // Objektiniame programavime funkcija yra vadinama metodu (method)
+        // Objekte esantys elementai yra vadinami savybemis (properties)
+
+        const naujasObjektas = {
+            // Property
+            key: 'value',
+            // Method
+            method: function() {
+                return 1;
+            }
+        }
+
+        // DOM = Document Object Model
+        const dom = {
+            html: {
+                lang: 'en',
+                head: {
+                    meta: {
+                        charset: 'utf-8'
+                    }
+                },
+                body: {
+                    // Visi like elementai
+                }
+            }
+        }
+
+        // Objekto savybių reikšmių keitimas
+
+        const darVienasObjektas = {
+            pavadinimas: 'UAB "Advokatų kontora"',
+            adresas: 'Ašigalio g. 17',
+            telefonas: '+37056515616'
+        }
+
+        darVienasObjektas.telefonas = '+445165165616';
+
+        console.log(darVienasObjektas);
+
+        // Norint ištrinti savybę iš objekto
+        delete darVienasObjektas.telefonas;
+
+        console.log(darVienasObjektas);
+
+        // DOM'o modelis randasi prie globalaus kintamojo document
+
+        console.log(document);
+
+        console.log(console);
+
+        const automobiliai = {
+            gamintojas: 'BMW',
+            sarasas: function() {
+                return ['BMW', 'Audi', 'WV'];
+            }
+        }
+        
+        console.log(automobiliai.sarasas());
+
+
+
+
+    </script>
+</body>
+</html>

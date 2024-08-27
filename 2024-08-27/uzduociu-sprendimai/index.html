@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užduočių sprendimai</title>
+</head>
+<body>
+    <script>
+        function random(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        // Sukurkite masyvą iš dešimties augalų pavadinimų.
+        // Atspausdinkite kiekvieną pirmo uždavinio augalą atskiroje eilutėje.
+        // Atspausdinkite pirmo uždavinio kiekvieną augalą pradedant nuo paskutinio, ir baigiant pirmuoju. (atvirkščias ciklas).
+        // Suskaičiuokite kiek pirmo uždavinio masyve yra žodžių trumpesnių nei 5 simboliai, ir kiek ilgesnių nei 7 simboliai. 
+        // Suskaičiuokite kiek pirmo uždavinio masyve yra žodžių ilgesnių nei 5 simboliai bet trumpesnių  nei 10 simboliai. 
+
+        console.log('--PIRMA UŽDUOTIS--');
+
+        const augaluMasyvas = ['Beržas', 'Liepa', 'Tuja', 'Klevas', 'Ąžuolas', 'Alksnis', 'Bananas', 'Kadagys', 'Svarainis', 'Avietė'];
+
+        console.log('--ANTRA UŽDUOTIS--');
+
+        for(let i = 0; i < augaluMasyvas.length; i++) {
+            console.log(augaluMasyvas[i]);
+        }
+
+        console.log('--TREČIA UŽDUOTIS--');
+
+        for(let i = augaluMasyvas.length - 1; i >= 0; i--) {
+            console.log(augaluMasyvas[i]);
+        }
+
+        console.log('--KETVIRTA UŽDUOTIS--');
+
+        let trumpesniNeiPenki = 0;
+        let ilgesniNeiSeptyni = 0;
+
+        for(let i = 0; i < augaluMasyvas.length; i++) {
+            if(augaluMasyvas[i].length < 5) {
+                trumpesniNeiPenki++;
+            }
+
+            if(augaluMasyvas[i].length > 7) {
+                ilgesniNeiSeptyni++;
+            }
+        }
+
+        console.log(trumpesniNeiPenki, ilgesniNeiSeptyni);
+
+        console.log('--PENKTA UŽDUOTIS--');
+
+        let result = 0;
+
+        for(let i = 0; i < augaluMasyvas.length; i++) {
+            if(augaluMasyvas[i].length > 5 && augaluMasyvas[i].length < 10) {
+                result++;
+            }
+        }
+
+        console.log(result);
+
+        console.log('--SUNKESNI PIRMA UŽDUOTIS--');
+
+        const masyvas = [];
+
+        for(let i = 0; i < 30; i++) {
+            masyvas[masyvas.length] = random(5, 25);
+        }
+
+        console.log(masyvas);
+
+        console.log('--SUNKESNI ANTRA UŽDUOTIS A)--');
+
+        // Suskaičiuokite kiek masyve yra reikšmių didesnių už 10;
+
+        let reiksmesDidesnesNei10 = 0;
+
+        for(let i = 0; i < masyvas.length; i++) {
+            if(masyvas[i] > 10) {
+                reiksmesDidesnesNei10++;
+            }
+        }
+
+        console.log(reiksmesDidesnesNei10);
+
+        // reiksmesDidesnesNei10 = 0;
+
+        // masyvas.forEach(reiksme => {
+        //     if(reiksme > 10) {
+        //         reiksmesDidesnesNei10++;
+        //     }
+        // });
+
+        // console.log(reiksmesDidesnesNei10);
+
+        result = masyvas.filter(reiksme => reiksme > 10);
+
+        console.log(result.length);
+
+        console.log('--SUNKESNI ANTRA UŽDUOTIS B)--');
+
+        // Raskite didžiausią masyvo reikšmę ir jos indeksą arba indeksus jeigu yra keli;
+        
+        let max = 0;
+
+        for(let i = 0; i < masyvas.length; i++) {
+            if(masyvas[i] > max) {
+                max = masyvas[i];
+            }
+        }
+
+        console.log(Math.max(...masyvas));
+
+        console.log('Didžiausia reikšmė', max);
+
+        const didziausioSkaiciausIndeksai = [];
+
+        for(let i = 0; i < masyvas.length; i++) {
+            if(masyvas[i] === max) {
+                didziausioSkaiciausIndeksai.push(i);
+            }
+        }
+
+        console.log('Didziausio skaiciaus indeksai:', didziausioSkaiciausIndeksai);
+        
+        // Suskaičiuokite visų porinių (lyginių) indeksų reikšmių sumą;
+
+        console.log('--SUNKESNI ANTRA UŽDUOTIS C)--');
+
+        result = 0;
+
+        for(let i = 0; i < masyvas.length; i += 2) {
+            result += masyvas[i];
+        }
+
+        console.log('Lyginių indeksų reikšmių suma:', result);
+
+        result = masyvas.reduce((suma, reiksme, indeksas) => indeksas % 2 === 0 ? suma + reiksme : suma, 0);
+
+        console.log('Lyginių indeksų reikšmių suma:', result);
+
+        console.log('--SUNKESNI ANTRA UŽDUOTIS D)--');
+
+        result = masyvas.map((reiksme, indeksas) => reiksme - indeksas);
+    
+        console.log(result);
+
+        console.log('--SUNKESNI ANTRA UŽDUOTIS E)--');
+
+        // Papildykite masyvą papildomais 10 elementų su reikšmėmis nuo 5 iki 25, kad bendras masyvas padidėtų iki indekso 39;
+
+        for(let i = 0; i < 10; i++) {
+            masyvas.push(random(5, 25));
+        }
+
+        console.log(masyvas);
+
+        console.log('--SUNKESNI ANTRA UŽDUOTIS F)--');
+
+        let pirmasMasyvas = [];
+        let antrasMasyvas = [];
+
+        for(let i = 0; i < masyvas.length; i++) {
+            if(i % 2 === 0) {
+                pirmasMasyvas.push(masyvas[i]);
+            } else {
+                antrasMasyvas.push(masyvas[i]);
+            }
+        }
+
+        console.log(pirmasMasyvas, antrasMasyvas);
+
+        pirmasMasyvas = masyvas.filter((reiksme, indeksas) => indeksas % 2 === 0);
+        antrasMasyvas = masyvas.filter((reiksme, indeksas) => indeksas % 2 !== 0);
+
+        console.log(pirmasMasyvas, antrasMasyvas);
+
+        // Pirminio masyvo elementus su poriniais indeksais padarykite lygius 0 jeigu jie didesni už 15;
+        console.log('--SUNKESNI ANTRA UŽDUOTIS G)--');
+
+        for(let i = 0; i < masyvas.length; i++) {
+            if(i % 2 === 0 && masyvas[i] > 15) {
+                masyvas[i] = 0;
+            }
+        }
+
+        console.log(masyvas);
+
+        console.log('--SUNKESNI ANTRA UŽDUOTIS H)--');
+        // Suraskite pirmą indeksą, kurio elemento reikšmė didesnė už 10;
+
+        for(let i = 0; i < masyvas.length; i++) {
+            if(masyvas[i] > 10) {
+                console.log('Pirmo elemento didesnio nei 10 indeksas yra:' , i)
+                break;
+            }
+        }
+
+        console.log('Pirmo elemento didesnio nei 10 indeksas yra:', masyvas.findIndex(reiksme => reiksme > 10));
+
+        // Sukurkite naują masyvą iš jo pašalinę visus elementus turinčius porinį indeksą;
+
+        console.log('--SUNKESNI ANTRA UŽDUOTIS I)--');
+
+        result = [];
+
+        for(let i = 0; i < masyvas.length; i++) {
+            if(i % 2 === 0) {
+                result.push(masyvas[i]);
+            }
+        }
+
+        console.log(result);
+
+        console.log('Sugeneruotas masyvas: ', masyvas.filter((reiksme, indeksas) => indeksas % 2 === 0));
+    </script>
+</body>
+</html>
