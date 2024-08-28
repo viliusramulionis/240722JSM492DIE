@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laikrodis</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: brown;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="timer"></div>
+    <script>
+        function formatNumber(number) {
+            if(number < 10)
+                return '0' + number;
+
+            return number;
+        } 
+
+        let seconds = 9;
+        let minutes = 59;
+        let hours = 0;
+        
+        // Don't Repeat Yourself
+        // DRY Principas
+        // if(hours < 10) {
+        //     document.querySelector('.timer').textContent = '0' + hours;
+        // } else {
+        //     document.querySelector('.timer').textContent = hours;
+        // }
+
+        // document.querySelector('.timer').textContent += ':';
+
+        // if(minutes < 10) {
+        //     document.querySelector('.timer').textContent += '0' + minutes;
+        // } else {
+        //     document.querySelector('.timer').textContent += minutes;
+        // }
+
+        // document.querySelector('.timer').textContent += ':';
+
+        // if(seconds < 10) {
+        //     document.querySelector('.timer').textContent += '0' + seconds;
+        // } else {
+        //     document.querySelector('.timer').textContent += seconds;
+        // }
+
+        //Keep it simple stupid
+        //KISS 
+
+        document.querySelector('.timer').textContent = `${formatNumber(hours)}:${formatNumber(minutes)}:${formatNumber(seconds)}`;
+
+        setInterval(() => {
+            seconds++;
+
+            if(seconds === 60) {
+                minutes++;
+                seconds = 0;
+            }
+
+            if(minutes === 60) {
+                hours++;
+                minutes = 0;
+            }
+            
+            document.querySelector('.timer').textContent = `${formatNumber(hours)}:${formatNumber(minutes)}:${formatNumber(seconds)}`;
+        }, 1000);
+    </script>
+</body>
+</html>

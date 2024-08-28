@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector methods</title>
+</head>
+<body>
+    <div class="first"></div>
+    <div id="second"></div>
+    <div class="third"></div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        // Query Selector Panaudojimas naudojant CSS
+        document.querySelector('.first').textContent = 'Patalpintas tekstas';
+        
+        // Paieska pagal ID
+        document.getElementById('second').textContent = 'Dar vienas patalpintas tekstas';
+        
+        // Keliu elementu paieska
+        // naudojant querySelector paimamas pats pirmas rastas elementas
+        // querySelectorAll grąžina NodeList tipo objektą
+        const nodeList = document.querySelectorAll('li');
+
+        // for(let i = 0; i < nodeList.length; i++) {
+        //     console.log(nodeList[i]);
+        // }
+
+        // NodeList'o apdorojimas:
+        nodeList.forEach((el, index) => {
+            el.textContent = `Elemente su indeksu ${index} patalpintas tekstas`;
+        });
+
+        // For of panaudojimas vietoj forEach
+        // for(const el of nodeList) {
+        //     console.log(el);
+        // }
+
+        // Paieska pagal klase
+        // console.log(document.getElementsByClassName('third'));
+
+        const HTMLList = document.getElementsByTagName('li');
+
+        for(const el of HTMLList) {
+            console.log(el);
+        }
+    </script>
+</body>
+</html>

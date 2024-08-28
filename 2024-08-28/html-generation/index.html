@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generating HTML</title>
+</head>
+<body>
+    <div class="eilutes"></div>
+    <script>
+        const masyvas = [
+            {
+                pavadinimas: 'Labai gera prekė',
+                kaina: 19.99
+            },
+            {
+                pavadinimas: 'Geresne prekė',
+                kaina: 29.99
+            }
+        ];
+        
+        let html = '';
+
+        for(const preke of masyvas) {
+            html += `<div class="product">
+                <h2>${preke.pavadinimas}</h2>
+                <div class="price">${preke.kaina}</div>
+            </div>`;
+        }
+
+        document.querySelector('.eilutes').innerHTML = html;
+    </script>
+</body>
+</html>

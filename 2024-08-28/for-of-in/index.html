@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For of and in</title>
+</head>
+<body>
+    <script>
+        const masyvas = [10, 20, 30];
+        
+        // For of modifikacija yra skirta susigrąžinti tik reikšmę
+        for(const reiksme of masyvas) {
+            console.log(reiksme);
+        }
+
+        // For in grąžina elemento indeksą, pagal kurį galime susigrąžinti ir reikšmę
+        for(const indeksas in masyvas) {
+            console.log(indeksas, masyvas[indeksas]);
+        }
+
+        const objektas = {
+            pirmas: 'Hi',
+            antras: 'Hello',
+            trecias: 'Sveiki'
+        };
+
+        // Norint paimti objekte esančius raktažodžius:
+        const keys = Object.keys(objektas);
+
+        keys.forEach(key => {
+            console.log(objektas[key])
+        });
+
+        // Antras pavyzdys
+        // For in ciklas leidžia iteruoti objektus ir susigrąžinti raktažodžius
+        for(const raktazodis in objektas) {
+            console.log(objektas[raktazodis]);
+        }
+        
+    </script>
+</body>
+</html>
