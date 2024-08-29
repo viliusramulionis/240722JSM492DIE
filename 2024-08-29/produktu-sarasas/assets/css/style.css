@@ -1,0 +1,44 @@
+.regular-price {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.special-price {
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.original-price {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.product-row {
+    border-top: 1px solid gray;
+}
+
+.discount {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    padding: .1rem .4rem;
+}
+
+.rating {
+    position: relative;
+    width: fit-content;
+}
+
+.rating .filled {
+    position: absolute;
+    width: 50%;
+    overflow: hidden;
+}
+
+.rating .star-wrapper {
+    width: 98px;
+}

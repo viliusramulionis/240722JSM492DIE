@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipuliacija</title>
+    <style>
+        .box {
+            background-color: green;
+            width: 500px;
+            height: 500px;
+        }
+
+        .active {
+            color: white;
+            font-family: 'Arial';
+            font-size: 50px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .purple {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div id="pirmas" class="box" style="margin: 50px;">1</div>
+    <div id="antras" class="box">2</div>
+    <div id="trecias" class="box">3</div>
+    <script>
+        // Surasto elemento priskyrimas prie kintamojo
+        const pirmas = document.querySelector('#pirmas');
+        console.log(pirmas.style);
+
+        // Norint priskirti stilių prie elemento:
+        pirmas.style.backgroundColor = 'blue';
+        pirmas.style.margin = 0;
+        pirmas.style.color = 'white';
+        pirmas.style.fontSize = '50px';
+        pirmas.style.fontWeight = 'bold';
+        pirmas.style.fontFamily = 'Arial';
+        pirmas.style.display = 'flex';
+        pirmas.style.justifyContent = 'center';
+        pirmas.style.alignItems = 'center';
+
+        // Klasės priskyrimas
+        const antras = document.querySelector('#antras');
+        console.log(antras.classList);
+
+        // Norint prideti klase
+        antras.classList.add('active');
+        
+        // Norint pasalinti klase
+        antras.classList.add('purple');
+        antras.classList.remove('purple');
+
+
+        setInterval(() => {
+            if(antras.classList.contains('purple')) {
+                antras.classList.remove('purple');
+            } else {
+                antras.classList.add('purple');
+            }
+        }, 1000);
+
+        const trecias = document.querySelector('#trecias');
+
+        trecias.classList.add('active');
+
+        setInterval(() => {
+            trecias.classList.toggle('purple');
+        }, 3000);
+
+    </script>
+</body>
+</html>

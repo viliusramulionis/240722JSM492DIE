@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <button onclick="paspaudimas()">Paspausk mane</button>
+    <button class="mygtukas">Paspaudimas su eventListener</button>
+    <button class="antras-mygtukas">Paspaudimas su savybes priskyrimu</button>
+    <button class="skaiciuoklis" onclick="skaiciuok()">Paspausk mane</button>
+    <button onclick="keiskSpalva()">Paspausk mane</button>
+    <script>
+        // Pirmas būdas registruoti įvykį
+        function paspaudimas() {
+            console.log('Paspaudimas įvyko');
+        }
+
+        // Antras būdas registruoti įvykį
+        const mygtukas = document.querySelector('.mygtukas');
+
+        mygtukas.addEventListener('click', () => {
+            console.log('Paspaudimas įvyko naudojant addEventListener');
+        });
+
+        // Trečias būdas
+
+        const antrasMygtukas = document.querySelector('.antras-mygtukas');
+
+        antrasMygtukas.onclick = () => {
+            console.log('Paspaudimas registruojant funkciją prie savybės');
+        } 
+
+        let skaiciuotuvas = 0;
+
+        const skaiciuok = () => {
+            skaiciuotuvas++;
+            
+            document.querySelector('.skaiciuoklis').textContent = `Mygtukas paspaustas ${skaiciuotuvas} kartus`;  
+        }
+
+        const keiskSpalva = () => {
+            // console.log(document.querySelector('body').style.backgroundColor);
+            const body = document.querySelector('body');
+            if(body.style.backgroundColor === 'black') {
+                body.style.backgroundColor = 'red';
+            } else {
+                body.style.backgroundColor = 'black';
+            }
+        }
+
+
+        
+    </script>
+</body>
+</html>
