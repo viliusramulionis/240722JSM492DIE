@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fono spalvos</title>
+</head>
+<body>
+    <button onclick="changeColor('blue')">Blue</button>
+    <button onclick="changeColor('red')">Red</button>
+    <button onclick="changeColor('white')">White</button>
+    <script>
+        // PATOBULINTAS VARIANTAS
+        const changeColor = (color) => {
+            document.querySelector('body').style.backgroundColor = color;
+        }
+u7
+        // PIRMAS VARIANTAS
+        // document.querySelector('#blue').addEventListener('click', () => {
+        //     document.querySelector('body').style.backgroundColor = 'blue';
+        // });
+
+        // document.querySelector('#red').addEventListener('click', () => {
+        //     document.querySelector('body').style.backgroundColor = 'red';
+        // });
+
+        // document.querySelector('#white').addEventListener('click', () => {
+        //     document.querySelector('body').style.backgroundColor = 'white';
+        // });
+    </script>
+</body>
+</html>

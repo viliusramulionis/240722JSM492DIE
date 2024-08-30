@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teleloto</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        .teleloto {
+            display: flex;
+            max-width: 1024px;
+            margin: 0 auto;
+            overflow-x: scroll;
+            padding: 1rem 0;
+            gap: 20px;
+        }
+
+        .teleloto div {
+            flex: 0 0 100px;
+            height: 100px;
+            border-radius: 50%;
+            color: white;
+            font-size: 38px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .juoda {
+            background-color: black;
+        }
+
+        .raudona {
+            background-color: red;
+        }
+
+        .geltona {
+            background-color: rgba(250, 187, 15, 0.905);
+        }
+
+        .melyna {
+            background-color: blue;
+        }
+
+        .zalia {
+            background-color: green;
+        }
+
+        button {
+            background-color: black;
+            padding: 2rem 5rem;
+            border-radius: 7px;
+            color: white;
+            font-size: 24px;
+            margin: 50px auto;
+            display: block;
+            cursor: pointer;
+        }
+
+        .zaidimas-baigesi {
+            font-size: 80px;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+            padding: 5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="rollBall()">Ridenti kamuoliuką</button>
+    <div class="teleloto"></div>
+    <div class="zaidimas-baigesi">SKAMBUTIS!!!!</div>
+    <script>
+        const random = (min, max) => {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        const laimingasKamuoliukas = random(0, 100);
+        const zaidimasBaigesi = document.querySelector('.zaidimas-baigesi');
+        const teleloto = document.querySelector('.teleloto');
+        const mygtukas = document.querySelector('button');
+
+        zaidimasBaigesi.style.display = 'none';
+        teleloto.style.display = 'none';
+
+        const rollBall = () => {
+            const skaicius = random(0, 100);
+            let spalva = 'juoda';
+
+            teleloto.style.display = 'flex';
+
+            if(skaicius >= 20 && skaicius <= 39) {
+                spalva = 'geltona';
+            }
+
+            if(skaicius >= 40 && skaicius <= 59) {
+                spalva = 'raudona';
+            }
+
+            if(skaicius >= 60 && skaicius <= 79) {
+                spalva = 'melyna';
+            }
+
+            if(skaicius >= 80 && skaicius <= 100) {
+                spalva = 'zalia';
+            }
+
+            teleloto.innerHTML = `<div class="${spalva}">${skaicius}</div>` + teleloto.innerHTML;
+
+            if(skaicius === laimingasKamuoliukas) {
+                teleloto.style.display = 'none';
+                mygtukas.style.display = 'none';
+                zaidimasBaigesi.style.display = 'block';
+            }
+        }
+
+    </script>
+</body>
+</html>
