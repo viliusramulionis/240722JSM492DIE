@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Element</title>
+</head>
+<body>
+    <script>
+        document.querySelector('body').innerHTML = `<div class="result"></div>`;
+
+        const result = document.createElement('div');
+        result.classList.add('result');
+        result.textContent = 'Pridėtas elementas';
+        result.style.color = 'red';
+        document.querySelector('body').append(result);
+
+        const template = document.createElement('div');
+        const title = document.createElement('h2');
+        title.textContent = 'Įkeltas pavadinimas';
+        template.append(title);
+
+        document.querySelector('body').append(template);
+
+        // const parent = document.createElement('div');
+        // const child1 = document.createElement('div');
+        // const child2 = document.createElement('div');
+        // child1.append(child2);
+        // parent.append(child1);
+        // result.append(parent);
+    </script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Games</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        .game {
+            background-color: black;
+            position: relative;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            flex-direction: column;
+        }
+
+        .box {
+            background-color: white;
+            position: absolute;
+        }
+
+        .results {
+            width: 800px;
+            height: 300px;
+            overflow-y: scroll;
+        }
+
+        .results li {
+            list-style: none;
+            border-bottom: 1px solid rgb(211, 211, 211);
+            padding: .5rem 1rem;
+        }
+
+        .timer {
+            padding: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="game">
+        <div class="box" onclick="clicked()"></div>
+    </div>
+    <div class="timer"></div>
+    <div class="results"></div>
+    <script>
+        const random = (min, max) => {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        const boxStyle = (box) => {
+            box.style.top = `${random(0, gameHeight - boxHeight)}px`;
+            box.style.left = `${random(0, gameWidth - boxWidth)}px`;
+            box.style.backgroundColor = `rgb(${random(100, 255)}, ${random(100, 255)}, ${random(100, 255)})`;
+        }
+
+        const clicked = () => {
+            if(clickedAlready)
+                return;
+
+            playerPoints++;
+            console.log(playerPoints);  
+            clickedAlready = true;
+        }
+
+        const setTime = () => {
+            timer.innerHTML = `
+                <span class="roundNumber">${passedRounds + 1} roundas</span> /
+                <span class="timer">Likęs laikas: ${maxPoints - passedIntervals}</span>
+            `;
+        }
+        
+        const start = () => {
+            game.innerHTML = `<div class="box" onclick="clicked()"></div>`;
+            const box = document.querySelector('.box');
+            box.style.width = `${boxWidth}px`;
+            box.style.height = `${boxHeight}px`;
+
+            results.innerHTML = '';
+            
+            passedRounds = 0;
+
+            const intervalId = setInterval(() => {
+                if(passedIntervals >= maxPoints) {
+                    if(playerPoints > maxPoints - playerPoints) {
+                        results.innerHTML += `<li>${passedRounds + 1} roundą laimėjo žaidėjas</li>`;
+                        totalPlayerPoints++;
+                    } else if(playerPoints === maxPoints - playerPoints) {
+                        results.innerHTML += `<li>${passedRounds + 1} rounde įvyko lygiosios</li>`;
+                    } else {
+                        results.innerHTML += `<li>${passedRounds + 1} roundą laimėjo kompiuteris</li>`;
+                    }
+                    passedIntervals = 0;
+                    playerPoints = 0;
+                    passedRounds++;
+                }
+
+                if(passedRounds >= maxRounds) {
+                    // Žaidimas baigėsi
+                    clearInterval(intervalId);
+                    game.innerHTML = `<h2>Žaidimas baigėsi</h2>`;
+                    if(totalPlayerPoints > maxRounds - totalPlayerPoints) {
+                        game.innerHTML += `<p>Žaidimą laimėjo žaidėjas</p>`;
+                    } else if(totalPlayerPoints === maxRounds - totalPlayerPoints) {
+                        game.innerHTML += `<p>Žaidimą laimėjo draugystė</p1>`;
+                    } else {
+                        game.innerHTML += `<p>Žaidimą laimėjo kompiuteris</p1>`;
+                    }
+
+                    game.innerHTML += `<button onclick="start()">Pradėti iš naujo</button>`;
+                    return;
+                }
+
+                boxStyle(box);
+                setTime();
+                clickedAlready = false;
+                passedIntervals++;
+            }, 1000);
+        }
+
+        const game = document.querySelector('.game'),
+        box = document.querySelector('.box'),
+        results = document.querySelector('.results'),
+        timer = document.querySelector('.timer'),
+        gameWidth = 800,
+        gameHeight = 500,
+        boxWidth = 50,
+        boxHeight = 50,
+        maxPoints = 3,
+        maxRounds = 3;
+
+        let playerPoints = 0,
+        totalPlayerPoints = 0,
+        clickedAlready = false,
+        passedIntervals = 0,
+        passedRounds = 0;
+
+        game.style.width = `${gameWidth}px`;
+        game.style.height = `${gameHeight}px`;
+        box.style.width = `${boxWidth}px`;
+        box.style.height = `${boxHeight}px`;
+
+        boxStyle(box);
+        setTime();
+        start();
+    </script>
+</body>
+</html>
