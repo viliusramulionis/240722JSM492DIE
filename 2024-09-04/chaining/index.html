@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object chaining</title>
+</head>
+<body>
+    <script>
+        // Norint pakeisti du žodžius stringe:
+        const stringas = 'Labas Pasauli';
+
+        const modifikuotasStringas = stringas.replace('Labas', 'Sveiki');
+
+        console.log(modifikuotasStringas.replace('Pasauli', 'Visuomene'));
+
+        // Gaunamas vienodas rezultatas
+        console.log(stringas.replace('Labas', 'Sveiki').replace('Pasauli', 'Visuomene'));
+
+        // Chaining - Metodų paleidimas vienas paskui kitą 
+        const objektas = {
+            pavadinimas: 'UAB "Gera įmonė"',
+            pakeitimas: function() {
+                // this yra objektas kuriame patalpintas metodas
+                this.pavadinimas = this.pavadinimas.replace('UAB', 'VŠĮ');
+                return this;
+            },
+            darVienasPakeitimas: function() {
+                this.pavadinimas = this.pavadinimas.replaceAll('"', "'");
+                return this;
+            }
+        }
+
+        console.log(objektas.pakeitimas().darVienasPakeitimas());
+        // objektas.darVienasPakeitimas();
+        // console.log(objektas);
+
+        
+
+    </script>
+</body>
+</html>

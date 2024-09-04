@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+</head>
+<body>
+    <script>
+        // Klasė yra šablonas pagal kurį formuojamas objektas
+        // Pagal klasę formuojami objektai (Instances)
+        // Pagal gerają praktiką klasių pavadinimai rašomi iš didžiosios raidės
+
+        // class Imone {
+        //     pavadinimas = 'UAB "Gera įmonė"';
+
+        //     pakeitimas() {
+        //         this.pavadinimas = this.pavadinimas.replace('UAB', 'VŠĮ');
+        //         return this;
+        //     }
+        // }  
+
+        // const imone = new Imone; //Instance formavimas
+        // imone.pakeitimas()
+        // console.log(imone.pavadinimas);
+
+        // const imone2 = new Imone;
+        // imone2.pakeitimas()
+        // console.log(imone2.pavadinimas);
+
+        // const imone3 = new Imone;
+        // imone3.pakeitimas()
+        // console.log(imone3.pavadinimas);
+
+        // Kuomet kuriamas klas4s instancija pagal nutylėjimą sukuriamas constructor metodas
+        // konstruktorius yra skirtas į objektą priimti perduotus parametrus
+
+        class Imone {
+            constructor(p) {
+                // objekto savybei priskiriama reikšmė gauta per parametrą p
+                this.pavadinimas = p;
+            }
+
+            pakeitimas() {
+                this.pavadinimas = this.pavadinimas.replace('UAB', 'VŠĮ');
+                return this;
+            }
+        }  
+
+        const imone = new Imone('UAB "Gera parduotuvė"');
+
+        console.log(imone.pakeitimas());
+
+        const imone2 = new Imone('UAB "Šaunus verslas"');
+
+        console.log(imone2.pakeitimas());
+        
+        const imone3 = new Imone('UAB "Apgavikai"');
+
+        console.log(imone3.pakeitimas());
+
+        // Klasikinis klasės deklaravimas funkcijos pagalba
+        function Automobilis(gamintojas) {
+            this.gamintojas = gamintojas;
+            this.isMazuju = function() {
+                this.gamintojas = this.gamintojas.toLowerCase();
+            }
+
+            // const ratuKiekis = () => {
+            //     return false;
+            // }
+
+            // ratuKiekis();
+        }
+
+        // Metodo priregistravimas prie prototipo
+        Automobilis.prototype.isDidziuju = function() {
+            this.gamintojas = this.gamintojas.toUpperCase();
+        }
+
+        const automobilis = new Automobilis('BMW');
+        automobilis.isMazuju();
+        automobilis.isDidziuju();
+
+        console.log(automobilis);
+
+        // Getter ir setter metodai
+        // Entity (Subjektas) - Tėvinė klasė (parent class)
+        // Inheritance
+        class Pastatas {
+            // Groteles simbolizuoja savybes prieinamuma (Access modifier)
+            #aukstai; //Privacios savybes nustatymas 
+            #plotis;
+            #aukstis;
+
+            constructor(aukstai, plotis, aukstis) {
+                this.#aukstai = aukstai;
+                this.#plotis = plotis;
+                this.#aukstis = aukstis;
+            }
+
+            pridetiAuksta() {
+                this.#aukstai++;
+            } 
+
+            // Getteriai - grąžina informaciją iš objekto
+
+            getAukstai() {
+                return `Dabartinis aukštų kiekis: ${this.#aukstai}`;
+            }
+
+            getPlotis() {
+                return `Dabartinis plotis: ${this.#plotis}`;
+            }
+
+            getAukstis() {
+                return `Dabartinis aukštis: ${this.#aukstis}`;
+            }
+
+            // Setteriai nustato informaciją objekte
+
+            setAukstai(skaicius) {
+                this.#aukstai = skaicius;
+            }
+
+            setPlotis(skaicius) {
+                this.#plotis = skaicius;
+            }
+
+            setAukstis(skaicius) {
+                this.#aukstis = skaicius;
+            }
+        }
+
+        const pastatas = new Pastatas(2, 100, 8);
+
+        console.log(pastatas.getAukstai());
+
+        pastatas.pridetiAuksta();
+
+        console.log(pastatas.getAukstai());
+        console.log(pastatas.getPlotis());
+        console.log(pastatas.getAukstis());
+        
+        pastatas.setAukstai(8);
+        pastatas.setPlotis(150);
+        pastatas.setAukstis(18);
+        
+        console.log(pastatas.getAukstai());
+        console.log(pastatas.getPlotis());
+        console.log(pastatas.getAukstis());
+
+        
+        // Dukterinė klasė (Child class)
+        class VersoPastatas extends Pastatas {
+            #fasadas;
+
+            constructor(aukstai, plotis, aukstis, fasadas) {
+                super(aukstai, plotis, aukstis);
+                this.#fasadas = fasadas;
+            }
+
+            getFasadas() {
+                return `Dabartinis fasadas: ${this.#fasadas}`;
+            }
+
+            setFasadas(tipas) {
+                this.#fasadas = tipas;
+            }
+        }
+
+        const versloPastatas = new VersoPastatas(6, 160, 15, 'Stiklas');
+
+        console.log(versloPastatas);
+    </script>
+</body>
+</html>
