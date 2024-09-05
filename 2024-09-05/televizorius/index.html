@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Televizorius</title>
+</head>
+<body>
+    <script>
+        class Televizorius {
+            garsas = 50;
+            kanalas = 1;
+
+            constructor(gamintojas) {
+                this.gamintojas = gamintojas;
+            }
+
+            setGarsas(lygis) {
+                if(typeof lygis !== 'number')
+                    return;
+
+                this.garsas = lygis;
+            }
+
+            setKanalas(kanalas) {
+                // Duomenų validacija (Validation)
+                // Guard
+                if(typeof kanalas !== 'number')
+                    return 'Blogas duomens tipas';
+                
+                this.kanalas = kanalas > 50 ? 1 : kanalas;
+            }
+
+            gamykliniaiParametrai() {
+                this.garsas = 50;
+                this.kanalas = 1;
+            }
+
+            kasVyksta() {
+                return `Televizorius ‘${this.gamintojas}’ šiuo metu rodo ${this.kanalas} kanalą. Garso lygis ${this.garsas}.`;
+            }
+        }
+
+        const televizorius = new Televizorius('Sony');
+
+        console.log(televizorius);
+
+        televizorius.setGarsas(55);
+
+        console.log(televizorius);
+
+        televizorius.setKanalas(51);
+
+        console.log(televizorius);
+
+        televizorius.setKanalas(15);
+
+        console.log(televizorius.kasVyksta());      
+        
+        televizorius.gamykliniaiParametrai();
+
+        console.log(televizorius);
+
+    </script>
+</body>
+</html>

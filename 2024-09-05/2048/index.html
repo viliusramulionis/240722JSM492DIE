@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+    <style>
+        .game {
+            background-color: brown;
+            width: 500px;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            row-gap: 20px;
+            column-gap: 20px;
+            padding: 20px 10px 20px 20px;
+            border-radius: 5px;
+        }
+
+        .game div {
+            width: 100px;
+            height: 100px;
+            background-color: coral;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="game"></div>
+    <script>
+        const random = (min, max) => {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        const skaiciai = [
+            {
+                skaicius: 0,
+                spalva: 'black',
+                sriftoSpalva: 'white'
+            }, 
+            {
+                skaicius: 2,
+                spalva: 'red',
+                sriftoSpalva: 'white'
+            },          {
+                skaicius: 4,
+                spalva: 'blue',
+                sriftoSpalva: 'white'
+            },         {
+                skaicius: 8,
+                spalva: 'purple',
+                sriftoSpalva: 'white'
+            },        {
+                skaicius: 16,
+                spalva: 'beige',
+                sriftoSpalva: 'black'
+            },         {
+                skaicius: 32,
+                spalva: 'yellow',
+                sriftoSpalva: 'black'
+            },        {
+                skaicius: 64,
+                spalva: 'tomato',
+                sriftoSpalva: 'white'
+            }
+        ];
+
+        for(let i = 0; i < 16; i++) {
+            const game = document.querySelector('.game');
+            const objektas = skaiciai[random(0, skaiciai.length - 1)];
+            
+            game.innerHTML += `
+                <div style="background-color: ${objektas.spalva}; color: ${objektas.sriftoSpalva}">
+                    ${objektas.skaicius !== 0 ? objektas.skaicius : ''}
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
