@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+</head>
+<body>
+    <div class="result"></div>
+    <script>
+        const json = `{
+            "message": "https://images.dog.ceo/breeds/retriever-golden/n02099601_14.jpg",
+            "status": "success"
+        }`;
+
+        // parse metodas konvertuoja stringą į javascript duomenis
+        const convertedJSON = JSON.parse(json);
+        console.log(convertedJSON.message);
+
+        // JSON.stringify() atlieka atvirkštinį veiksmą - konvertuoja duomenis į strigną
+        console.log('Pradžia');
+
+        fetch('https://dog.ceo/api/breeds/image/random')
+        .then((data) => data.json())
+        .then(data => {
+            console.log('Rezultatas');
+            // Grąžinta informacija iš serverio
+            document.querySelector('.result').innerHTML = `<img onclick="imageClick()" src="${data.message}" alt="">`;
+        
+            console.log(document.querySelector('img'));
+
+        });
+
+        const imageClick = () => {
+            console.log('Paspaudimas');
+        };
+
+        console.log('Pabaiga');
+    </script>
+</body>
+</html>
