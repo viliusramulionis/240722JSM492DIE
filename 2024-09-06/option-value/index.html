@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectbox value</title>
+</head>
+<body>
+    <select onchange="handleSelect(event)">
+        <option value="1">Pirmas</option>
+        <option value="2">Antras</option>
+        <option value="3">Trecias</option>
+    </select>
+    <script>
+        const handleSelect = (e) => {
+            // console.log(document.querySelector('select').value);
+            console.log(e.target.value);
+        }
+        
+        // https://dog.ceo/api/breed/australian/shepherd/images/random
+    </script>
+</body>
+</html>
