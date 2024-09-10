@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async functions</title>
+</head>
+<body>
+    <script>
+        const random = (min, max) => {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
+        }
+
+        const customFetch = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if(random(0, 1) === 1) {
+                    resolve('Veiksmas ivyko');
+                } else {
+                    reject('Nepavyko susiristi su serveriu');
+                }
+            }, 2000);
+        });
+
+        async function asinchronineFunkcija() {
+            return 'Hello';
+        }
+
+        const arrowFunkcijosAprasymas = async () => {
+            return 'Goodbye';
+        }
+
+        const funkcijaKuriLaukia = async () => {
+            console.log(await customFetch);
+        }
+
+        // funkcijaKuriLaukia();
+
+        // CALBACK HELL
+        // fetch('https://dog.ceo/api/breeds/list/all')
+        // .then(resp => resp.json())
+        // .then(resp => {
+        //     // Iteruojamos veisles
+        //     fetch('https://dog.ceo/api/breed/veisle/images')
+        //     .then(resp2 => resp2.json())
+        //     .then(resp2 => {
+        //         fetch('https://dog.ceo/api/breed/veisle/images')
+        //         .then(resp3 => resp3.json())
+        //         .then(resp3 => {
+        //             fetch('https://dog.ceo/api/breed/veisle/images')
+        //             .then(resp4 => resp4.json())
+        //             .then(resp4 => {
+                        
+        //             });
+        //         });
+        //     });
+        // });
+
+        const fetchDogs = async () => {
+            let resp = await fetch('https://dog.ceo/api/breeds/list/all');
+            resp = await resp.json();
+
+            let resp2 = await fetch('https://dog.ceo/api/' + resp + '/list/all');
+            resp2 = await resp2.json();
+
+            let resp3 = await fetch('https://dog.ceo/api/breeds/list/all');
+            resp3 = await resp3.json();
+
+            let resp4 = await fetch('https://dog.ceo/api/breeds/list/all');
+            resp4 = await resp4.json();
+        }
+
+        const veiksmuSeka = async () => {
+            console.log('Funkcijos pradžia');
+            console.log(await customFetch);
+            console.log('Funkcijos pabaiga');
+        }
+
+        // veiksmuSeka();
+
+        // console.log('Promiso pradžia');
+        // customFetch.then(resp => console.log(resp));
+        // console.log('Promiso pabaiga');
+
+        const klaidosTikrinimas = async () => {
+            try {
+                await customFetch;
+                // 'Hello'.neegzistuojantiMetodas();
+            } catch(e) {
+                console.log(e);
+            }
+        }   
+
+        klaidosTikrinimas();
+
+    </script>
+</body>
+</html>

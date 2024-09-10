@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random User Card</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+        body {
+            background-color: #f9f9f9;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Ubuntu;
+        }
+
+        body::before {
+            content: "";
+            background: #2c2e31;
+            height: 50vh;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .card {
+            background-color: white;
+            max-width: 730px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 3px;
+            border-bottom: 1px solid rgba(0, 0, 0, .12);
+            padding: 1.2rem 0;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 130px;
+            background: #f9f9f9;
+            border-bottom: 1px solid rgba(0, 0, 0, .15);
+            z-index: -1;
+        }
+
+        .image {
+            border: 1px solid rgba(0,0,0,.25);
+            border-radius: 50%;
+            padding: 5px;
+            background-color: white;
+            position: relative;
+        }
+
+        .image img {
+            border-radius: 50%;
+            display: block;
+            width: 150px;
+            height: 150px;
+        }
+
+        .image span {
+            background-color: rgba(0, 0, 0, 0.733);
+            color: white;
+            padding: .6rem 1rem;
+            border-radius: 3px;
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            opacity: 0;
+            transition: all .3s ease-in-out;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .image:hover span {
+            opacity: 1;
+            bottom: -20px;
+        }
+
+        .info {
+            text-align: center;
+            padding: 2rem 0 1.5rem;
+        }
+
+        .info .label {
+            color: #999;
+            font-size: 18px;
+        }
+
+        .info .data {
+            color: #2c2e31;
+            font-size: 38px;
+        }
+
+        .icons ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .icons ul li {
+            width: 40px;
+            height: 48px;
+            background-image: url(card_icons.png);
+            background-size: 378px;
+            background-repeat: no-repeat;
+            background-position-y: 100%;
+            transition: all .3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .icons .icon1 {
+            background-position-x: 0;
+        }
+
+        .icons .icon2 {
+            background-position-x: -67px;
+        }
+
+        .icons .icon3 {
+            background-position-x: -135px;
+        }
+        
+        .icons .icon4 {
+            background-position-x: -202px;
+        }
+        
+        .icons .icon5 {
+            background-position-x: -270px;
+        }
+        
+        .icons .icon6 {
+            background-position-x: -337px;
+        }
+
+        .icons .active {
+            background-position-y: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // PIRMAS VARIANTAS
+        // const getData = (e) => {
+        //     fetch('https://randomuser.me/api/')
+        //     .then(resp => resp.json())
+        //     .then(resp => {
+        //         const data = resp.results[0];
+        //         console.log(data);
+        //         document.querySelector('body').innerHTML = `
+        //         <div class="card">
+        //             <div class="image">
+        //                 <img src="${data.picture.large}" alt="">
+        //                 <span onclick="getData()">New</span>
+        //             </div>
+        //             <div class="info">
+        //                 <div class="label">Hi, My name is</div>
+        //                 <div class="data">${data.name.first + ' ' + data.name.last}</div>
+        //             </div>
+        //             <div class="icons">
+        //                 <ul>
+        //                     <li class="icon1 active" data-label="Hi, My name is" data-value="${data.name.first + ' ' + data.name.last}" onmouseenter="changeData(event)"></li>
+        //                     <li class="icon2" data-label="My email address is" data-value="${data.email}" onmouseenter="changeData(event)"></li>
+        //                     <li class="icon3" data-label="My birthday is" data-value="${new Date(data.dob.date).toLocaleDateString()}"onmouseenter="changeData(event)"></li>
+        //                     <li class="icon4" data-label="My address is" data-value="${data.location.street.number + ' ' + data.location.street.name}"onmouseenter="changeData(event)"></li>
+        //                     <li class="icon5" data-label="My phone number is" data-value="${data.cell}"onmouseenter="changeData(event)"></li>
+        //                     <li class="icon6" data-label="My password is" data-value="${data.login.password}"onmouseenter="changeData(event)"></li>
+        //                 </ul>
+        //             </div>
+        //         </div>`;
+        //     });
+        // }
+
+        // const changeData = (e) => {
+        //     document.querySelectorAll('.icons li').forEach((el) => {
+        //         el.classList.remove('active');
+        //     });
+            
+        //     e.target.classList.add('active');
+
+        //     // getAttribute() paima bet kokio nurodyto atributo reikšmę
+        //     // document.querySelector('.info .label').textContent = e.target.getAttribute('data-label');
+            
+        //     // dataset laiko visus data-* atributus 
+        //     document.querySelector('.info .label').textContent = e.target.dataset.label;
+
+        //     document.querySelector('.info .data').textContent = e.target.dataset.value;
+
+        // }
+
+        // getData();
+
+        // ANTRAS VARIANTAS
+
+        const getData = (e) => {
+            fetch('https://randomuser.me/api/')
+            .then(resp => resp.json())
+            .then(resp => {
+                const data = resp.results[0];
+                console.log(data);
+                document.querySelector('body').innerHTML = `
+                <div class="card">
+                    <div class="image">
+                        <img src="${data.picture.large}" alt="">
+                        <span onclick="getData()">New</span>
+                    </div>
+                    <div class="info">
+                        <div class="label">Hi, My name is</div>
+                        <div class="data">${data.name.first + ' ' + data.name.last}</div>
+                    </div>
+                    <div class="icons">
+                        <ul>
+                            <li class="icon1 active" onmouseenter="changeData(event, 'Hi, My name is', '${data.name.first + ' ' + data.name.last}')"></li>
+                            <li class="icon2" onmouseenter="changeData(event, 'My email address is', '${data.email}')"></li>
+                            <li class="icon3" onmouseenter="changeData(event, 'My birthday is', '${new Date(data.dob.date).toLocaleDateString()}')"></li>
+                            <li class="icon4" onmouseenter="changeData(event, 'My address is', '${data.location.street.number + ' ' + data.location.street.name}')"></li>
+                            <li class="icon5" onmouseenter="changeData(event, 'My phone number is', '${data.cell}')"></li>
+                            <li class="icon6" onmouseenter="changeData(event, 'My password is', '${data.login.password}')"></li>
+                        </ul>
+                    </div>
+                </div>`;
+            });
+        }
+
+        const changeData = (e, label, data) => {
+            document.querySelectorAll('.icons li').forEach((el) => {
+                el.classList.remove('active');
+            });
+            
+            e.target.classList.add('active');
+
+            document.querySelector('.info .label').textContent = label;
+
+            document.querySelector('.info .data').textContent = data;
+        }
+
+        getData();
+    </script>
+</body>
+</html>
