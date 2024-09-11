@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desctructing Assigment</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            pirmas: 'Hello',
+            antras: 'Cruel',
+            trecias: 'World'
+        }
+
+        // Kintamojo sukūrimas jam priskiriant reikšmes išimant jas iš objekto
+        const { trecias, pirmas, antras } = obj;
+
+        console.log(pirmas, antras, trecias);
+
+        const masyvas = [15, 25, 35];
+
+        const [pirmasSkaicius, antrasSkaicius, treciasSkaicius] = masyvas;
+
+        // const pirmasSkaicius = masyvas[0];
+        // const antrasSkaicius = masyvas[1];
+        // const treciasSkaicius = masyvas[2];
+
+        console.log(pirmasSkaicius, antrasSkaicius, treciasSkaicius);
+    </script>
+</body>
+</html>
