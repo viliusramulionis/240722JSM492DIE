@@ -14,3 +14,4 @@ console.log(pirmas, antras, trecias);
 console.log(c);
 
 console.log(importuotaReiksme);
+

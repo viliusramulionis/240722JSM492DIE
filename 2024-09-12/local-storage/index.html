@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+</head>
+<body>
+    <script>
+        // Norint pridėti reikšmę į Local Storage
+        // localStorage.setItem('key', 'value')
+
+        // Išvalo lokalų podėlį (storage)
+        // localStorage.clear()
+
+        // Norint paimti reikšmę iš lokalaus podėlio
+        // localStorage.getItem('key')
+
+        // Norint ištrinti reikšmę
+        // localStorage.removeItem('key')
+
+        localStorage.setItem('hello', 'world');
+
+        console.log(localStorage.getItem('hello'));
+
+        // JSON talpinimas į localStorage
+        const objektas = {
+            masyvas: [10, 15, 25]
+        }
+
+        localStorage.setItem('data', JSON.stringify(objektas));
+
+        // Informacijos papildymas
+        // let data = localStorage.getItem('data');
+        // data = JSON.parse(data);
+
+        const data = JSON.parse(localStorage.getItem('data'));
+        data.masyvas[3] = 'PAPILDYTA';
+
+        localStorage.setItem('data', JSON.stringify(data));
+    </script>
+</body>
+</html>
