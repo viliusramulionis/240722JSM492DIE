@@ -1,0 +1,17 @@
+.introHeading {
+    font-size: 56px;
+    font-weight: bold;
+    color: purple;
+}
+
+.subHeading {
+    font-size: 56px;
+    font-weight: bold;
+    color: #3c3c43;
+}
+
+.introText {
+    color: #3c3c43;
+    line-height: 36px;
+    font-size: 24px;
+}
