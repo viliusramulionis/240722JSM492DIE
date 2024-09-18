@@ -1,0 +1,22 @@
+.quantity {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 3rem 0;
+    justify-content: center;
+}
+
+.quantity span {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.quantity input {
+    width: 50px;
+    height: 40px;
+    border: 1px solid rgb(202, 202, 202);
+    border-radius: 3px;
+    padding: 0 10px;
+}
