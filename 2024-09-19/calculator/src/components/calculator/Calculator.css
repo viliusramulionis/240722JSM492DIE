@@ -1,0 +1,15 @@
+.calculator {
+    display: flex;
+}
+
+.calculator .digits {
+    display: flex;
+    flex-wrap: wrap;
+    width: 150px;
+    flex-direction: row-reverse;
+}
+
+.calculator .actions {
+    display: flex;
+    flex-direction: column;
+}
