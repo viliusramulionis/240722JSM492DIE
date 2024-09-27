@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "nodemon ."
+  },
+  "type": "module",
+  "dependencies": {
+    "express": "^4.21.0",
+    "mongoose": "^8.6.4"
+  }
+}
