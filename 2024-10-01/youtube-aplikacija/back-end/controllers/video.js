@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
     try {
         res.json(await Video.find());
     } catch {
-        res.status(500).json('Nepavyko susisiekti su serveriu');
+        res.status(500).json('Unable to reach server');
     }
 });
 
@@ -15,17 +15,19 @@ router.get('/:id', async (req, res) => {
     try {
         res.json(await Video.findById(req.params.id));
     } catch {
-        res.status(500).json('Nepavyko susisiekti su serveriu');
+        res.status(500).json('Unable to reach server');
     }
 }) 
 
 // Naujo video pridėjimas
 router.post('/', async (req, res) => {
-    console.log(req.body)
     try {
-        res.json(await Video.create(req.body));
+        res.json({ 
+            data: await Video.create(req.body),
+            message: 'Video is succesfully uploaded'
+        });
     } catch {
-        res.status(500).json('Nepavyko susisiekti su serveriu');
+        res.status(500).json('Unable to reach server');
     }
 });
 

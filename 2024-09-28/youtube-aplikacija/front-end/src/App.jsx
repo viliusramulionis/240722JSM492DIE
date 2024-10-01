@@ -8,19 +8,6 @@ const App = () => {
     fetch('http://localhost:3000/api/video/')
     .then(resp => resp.json())
     .then(resp => setData(resp));
-
-    // Norint persiųsti duomenis:
-    // fetch('http://localhost:3000/api/video/', {
-    //   body: {
-    //     title: 'Iš reacto persiųsti duomenys',
-    //     description: 'Aprašymas',
-    //     thumbnail: 'Nera',
-    //     videoId: 'nera'
-    //   }, //Persiunčiamas turinys
-    //   method: 'POST' //Persiunčiamų duomenų metodas (GET, POST, PUT, PATCH, DELETE)
-    // })
-    // .then(resp => resp.json())
-    // .then(resp => console.log(resp));
   }, []);
 
   return (
