@@ -13,7 +13,7 @@ const Home = () => {
                     data: 'There are no videos yet uploaded',
                     status: 'warning'
                 });
-            
+            console.log(resp.data);
             setData(resp.data)
         });
     }, []);
