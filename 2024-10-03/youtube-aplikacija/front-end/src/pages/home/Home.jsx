@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
     const [data, setData] = useState([]);
     const [message, setMessage] = useState();
+    console.log(new Date('2024-10-03T08:09:51.892+00:00'));
 
     useEffect(() => {
         axios.get(BASE_URL + '/api/video/')
