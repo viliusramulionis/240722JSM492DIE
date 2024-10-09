@@ -85,7 +85,7 @@ const NewVideo = () => {
                         className="form-control"
                     >
                         {categories.map(el => 
-                            <option value={el._id}>{el.name}</option>
+                            <option key={el._id} value={el._id}>{el.name}</option>
                         )}
                     </select>
                 </div>
