@@ -1,28 +1,36 @@
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { extractFormData } from '../../utils/common';
 import { BASE_URL } from '../../utils/config';
+import AuthContext from '../../context/AuthContext';
 import axios from 'axios';
 
 const Login = () => {
     const [message, setMessage] = useState();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const { user, setUser } = useContext(AuthContext);
+
+    useEffect(() => {
+        if(user)
+            return navigate('/');
+    }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         
         const formData = extractFormData(e.target);
-        console.log(formData);
+        
         axios.post(BASE_URL + '/api/user/login', formData)
         .then(resp => {
+            setUser(resp.data.data);
+
+            navigate('/');
+        })
+        .catch(error => {7
             setMessage({
-                data: resp.data,
-                status: 'success'
-            })
-
-            setTimeout(() => {
-
-            }, 3000);
+                data: error.response.data,
+                status: 'danger'
+            });
         });
     }
 
@@ -36,7 +44,7 @@ const Login = () => {
                     {message.data}
                 </div>
             }
-            <h1>Login</h1> 
+           <h1>Login</h1> 
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <input 
